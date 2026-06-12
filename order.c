@@ -6,6 +6,7 @@ int main(){
     printf("\norder id is :%d",order_id);
     printf("\nprice :%f",price);
     printf("\nquantity :%d",quantity);
+    printf("ntotal:%f",quantity+order);
     return 0;
 
 }
