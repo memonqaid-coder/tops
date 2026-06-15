@@ -1,0 +1,34 @@
+/*
+Q:Write a short paragraph in your own words defining what a 'program' 
+  is and give one real-life example from any app you use daily.
+
+A: program: A program is a highly structured,logical sequence of 
+   instructionwritten in a programming language that directs a computer 
+   or digital device to perform a specific operation. Computers lack
+   inherent intelligence; they require explicit, granular directions to
+   process data, manage memory, handle user inputs, and generate
+   outputs. A program essentially translates a human solution to
+   a problem into a format that a machine can execute flawlessly 
+   millions of times over.
+
+   /Real-Life Example: Zomato App ("Apply Coupon" Feature)/
+
+​When you use the Zomato app daily, you are interacting with hundreds
+of interconnected programs. A clear example of a specific program 
+running in the background happens when you click the "Apply Coupon" 
+button at checkout:
+​Input: The program captures your click action and reads the specific 
+       coupon code you selected (e.g., WELCOME70).
+​Processing: * It runs a verification check against Zomato's database to
+            see if the coupon is valid today.
+​            >It checks if your current cart value meets the minimum 
+             order requirement (e.g., minimum ₹199).
+​            >It checks if the restaurant you are ordering from 
+             participates in that specific discount offer.
+​Calculation: If all conditions are met, the program calculates the 
+             discount amount (e.g., 50% off up to ₹100) and subtracts 
+             it from your original bill total.
+​Output: The program updates your screen instantly to show the reduced 
+        price, displays a success message ("₹100 saved!"), and updates 
+        the final amount due for payment.
+*/
