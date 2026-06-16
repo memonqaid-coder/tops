@@ -1,4 +1,3 @@
-/*
 Q:Write a short paragraph in your own words defining what a 'program' 
   is and give one real-life example from any app you use daily.
 
@@ -31,4 +30,3 @@ button at checkout:
 ​Output: The program updates your screen instantly to show the reduced 
         price, displays a success message ("₹100 saved!"), and updates 
         the final amount due for payment.
-*/
