@@ -2,4 +2,38 @@ Q: List three popular programming languages you have heard of, and for
    each, mention whether it is usually compiled, interpreted, or can be 
    both.<br><br><em><strong>Hint:</strong> Think of languages like Java,
    Python, and JavaScript.</em>
-A: 
+
+A: 1. Python
+​      Primary Type: Interpreted
+      ​Detailed Explanation: Python code is executed line-by-line by a 
+      piece of software called the Python Interpreter. It does not 
+      require you to manually convert your code into an independent 
+      executable file before running it. When you run a Python script, 
+      the interpreter reads the first line, translates it to machine 
+      code, executes it, and then moves to the next line. This makes 
+      Python highly interactive and excellent for rapid debugging, 
+      though it can run slightly slower than fully compiled languages.
+   ​2. Java
+​      Primary Type: Both (Hybrid Approach)
+​      Detailed Explanation: Java uses a two-step translation process to 
+      achieve high performance and platform independence ("Write Once, 
+      Run Anywhere").
+​      Compilation Step: First, a compiler (javac) translates the 
+      human-readable Java source code into an intermediate, optimized 
+      format called Bytecode (stored as a .class file).
+​      Interpretation/JIT Step: When you run the program, the Java 
+      Virtual Machine (JVM) on your device interprets this Bytecode 
+      line-by-line. Modern JVMs also use a Just-In-Time (JIT) Compiler 
+      to turn frequently used sections of Bytecode directly into native
+      machine code on the fly for faster speed.
+​   3. JavaScript
+​      Primary Type: Interpreted (with Modern JIT Compilation)
+​      Detailed Explanation: JavaScript was traditionally a purely 
+      interpreted language designed to run dynamically inside web 
+      browsers (like Chrome or Safari) to make web pages interactive. 
+      When a web page loads, the browser's engine interprets the 
+      JavaScript code on the spot. Today, modern browser engines (like 
+      Google's V8 engine) use advanced Just-In-Time (JIT) compilation 
+      to compile scripts into machine code right before execution to 
+      make web apps incredibly fast, but structurally it still functions
+      within an interpreted runtime environment.
