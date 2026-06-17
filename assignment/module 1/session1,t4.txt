@@ -1,0 +1,24 @@
+Q: Write down the steps (as an algorithm, using simple numbered instructions) for ordering food on Swiggy — from opening the app to completing payment.
+
+A: steps for ordering food on Swiggy:
+  1> ​Start
+​  2> Launch the Swiggy application on your smartphone.
+​  3> Check Location: Verify the delivery address at the top of the screen. If incorrect, tap the address bar and select the current address using GPS or
+     manual entry.
+​  4> Browse/Search: Tap the search bar to type a specific dish or restaurant name, or scroll through the homepage banners and cuisine categories.
+​  5> Select Merchant: Click on the desired restaurant from the search results or curated list to view its complete menu.
+​  6> Add Items: Scroll through the restaurant menu, select the desired items, click the "Add" button, and choose specific customizations (like portions, 
+     extra cheese, or veg/egg variations) if prompted.
+​  7> Go to Cart: Once all food items are added, tap the "View Cart" bar appearing at the bottom of the screen.
+​  8> Review Order: Verify that the items, quantities, and delivery instructions are completely correct.
+​  9> Apply Offers: Scroll down to the "Offers & Coupons" section, browse available promo codes, and click "Apply" to deduct the discount amount from the final bill.
+​ 10> Initiate Checkout: Tap the "Proceed to Pay" button at the bottom of the screen.
+​ 11> Select Payment Gateway: Choose your preferred transaction method from the available list:
+​       -Option A: UPI (GPay, PhonePe, Paytm)
+       -​Option B: Credit or Debit Card
+​       -Option C: Net Banking / Wallets
+​ 12> Authorize Transaction: Complete the payment execution by entering your secure UPI PIN, Card CVV + OTP, or banking password.
+​ 13> Order Placement Verification: Wait for the payment gateway to process the request.
+​       -If successful: The app routes to the "Order Confirmed" animated screen and starts the live kitchen-preparation timer.
+​       -If failed: The app prompts a "Payment Unsuccessful" message and asks you to choose an alternative payment option.
+​ 14> End
