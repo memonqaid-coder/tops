@@ -1,0 +1,3 @@
+Q: Install GCC on your computer and verify the installation by running gcc --version in your terminal or command prompt.
+
+A: 
