@@ -1,6 +1,7 @@
-/* Declare variables for a Flipkart product: productName (as a string), 
+/*Q: eclare variables for a Flipkart product: productName (as a string), 
   price (float), and rating (double). Assign sample values and print each 
-  variable with its data type.*/
+  variable with its data type.
+  A: */
 #include <stdio.h>
 int main() {
     // 1. Variable declaration and initialization
