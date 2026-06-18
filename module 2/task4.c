@@ -3,7 +3,7 @@
 A:*/
    #include<stdio.h>
 int main(){
-   printf("hello,Instagram World\n");
+   printf("hello.exe\n");
     return 0;
 }
 /*gcc code: cd module\ 2/ --> ENTER -->gcc task4.c -o task -->ENTER --> ./task -->ENTER */
