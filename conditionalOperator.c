@@ -1,15 +1,23 @@
 #include<stdio.h>
 /*<,>,<=,>=,==,!=*/
 int main(){
-    int age=48;
-    /*int member=3;*/ 
-    /*if (member<3);
-    if (member>3);*/
-    if(age>=42)
+    int age=40;
+    int member=3; 
+    if (member<3);
+    if (member!=3); 
+    if(age<40);
     {
-        printf("Not eligible for rafting");
-       /* printf("\nNot allowed",member=4);
-        printf("\nArrange other members_Required",member=2);*/
+        printf("\nNot eligible for rafting %d",age<=48);
+        printf("\nNot allowed %d",member=4);
+        printf("\nArrange other members_Required %d",member!=3);
+    }
+    int passward=23889;
+    int confirmpassward=23889;
+    if(passward=passward==confirmpassward==23889);
+    if(passward=passward!=confirmpassward!=12345);
+    {
+        printf("\nWELCOME%c",passward);
+        printf("\nBETTER LUCK,NEXT TIME%c",passward);
     }
     return 0;
 }
