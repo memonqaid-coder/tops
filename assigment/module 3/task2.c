@@ -8,10 +8,10 @@ int CUSTOMER_ID=2344990088;
  printf("\n___ ZOMATO ORDER BILL ___");
  printf("\nCUSTOMER_ID:");
  printf("\n------------------");
- printf("\nitem price:Rs. %f" ,itemprice");
- printf("\ngst (28%%):Rs. %f ,gstrate");
+ printf("\nitem price:Rs. %f" ,itemprice);
+ printf("\ngst (28%%):Rs. %lf ,gstrate");
  printf("\n----------");
- printf("\nGRAND TOTAL:Rs. %f ,totalamount");
+ printf("\nGRAND TOTAL:Rs. %lf ,totalamount");
  printf("\n-----THANK YOU-----");
-    return 0;
- }
+ return 0;
+}
