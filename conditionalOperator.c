@@ -8,7 +8,6 @@ int main(){
     if(age<40);
     {
         printf("\nNot eligible for rafting %d");
-        scanf("%d",& Noteligible);
        /* printf("\nNot allowed %d",member=4);
         printf("\nArrange other members_Required %d",member!=3);*/
     }
