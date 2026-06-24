@@ -7,7 +7,7 @@ int main(){
     char charvalue='A';
     long long longlongvalue=12345678910ll;
     double doublevalue=3.124567;
-    char stringvalue= 'H';
+    //char *stringvalue='HELLO';
     printf("\n__Variable Fundamental__");
     printf("\n integer:%d",integervalue);
     printf("\n float :%f",floatvalue);
@@ -15,7 +15,7 @@ int main(){
     printf("\nchar:%c",charvalue);
     printf("\nlong long:%lld",longlongvalue);
     printf("\ndouble:%lf",doublevalue);
-    printf("\nstring:%s",stringvalue);
+    //printf("\nstring:%s",stringvalue);
     printf("\nNew integer value:");
     scanf("\n%d",&integervalue);
     printf("\nYou Entered New Integer Value");
@@ -56,5 +56,30 @@ int main(){
     printf("\nnew value in multi:%d",Assignvalue*=REassignvalue);
     printf("\nnew value in divi:%d",Assignvalue/=REassignvalue);
     printf("\nnew value in modulo:%d",Assignvalue%=REassignvalue);
+    int C=13;
+    int D=17;
+    int tereneryoperator=C<D?true:false;
+    printf("\n__TERENERY OPERATOR__");
+    printf("\nTerenery Operator is:%d",tereneryoperator);
+    int E=10;
+    int F=15;
+    printf("\n__CONDITION STATMENT__");
+    if(E<F){printf("\ncondition successfull");}
+    int G=33;
+    int H=44;
+    if(G<H){printf("\nFecthing Error");}
+    else {printf("\nRight Ans");}
+    /*char *Name="prakash";
+    printf("Enter Your Name");
+    scanf(&Name);
+    if (Name="prakash"){
+        printf("\nprakash result");
+        printf("\nEnglish=13/50");
+        printf("\nScience=33/50");
+        printf("\nHindi=35/50");
+        printf("\nGujrati=39/50");
+        printf("\nGrand Total");
+    }
+    else{printf("\nCheck Your Name Properly");}*/
     return 0;
 }
