@@ -16,13 +16,13 @@ int main() {
     printf(" __Flipkart Product Details__ \n");
     printf("\nProduct Name : %s", productName);
     printf("\nFREEProduct : %s", FREEProduct);
-    /*printf("Data Type    : String (char[])\n");*/
+    printf("Data Type    : String (char[])\n");
     printf("\nPrice        : %.2f", price);
     printf("\nPrice2        : %d", price2);
-    /*printf("Data Type    : Float\n");*/
+    printf("Data Type    : Float\n");
     printf("\nRating       : %.1lf", rating);
     printf("\nRating2       : %.1lf", rating2);
     printf("\nBUY NOW:%.2f", TOTALPAY);
-    /*printf("Data Type    : Double\n");*/
+    printf("Data Type    : Double\n");
     return 0;
 }
