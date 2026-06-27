@@ -61,25 +61,5 @@ int main(){
     int tereneryoperator=C<D?true:false;
     printf("\n__TERENERY OPERATOR__");
     printf("\nTerenery Operator is:%d",tereneryoperator);
-    int E=10;
-    int F=15;
-    printf("\n__CONDITION STATMENT__");
-    if(E<F){printf("\ncondition successfull");}
-    int G=33;
-    int H=44;
-    if(G<H){printf("\nFecthing Error");}
-    else {printf("\nRight Ans");}
-    /*char *Name="prakash";
-    printf("Enter Your Name");
-    scanf(&Name);
-    if (Name="prakash"){
-        printf("\nprakash result");
-        printf("\nEnglish=13/50");
-        printf("\nScience=33/50");
-        printf("\nHindi=35/50");
-        printf("\nGujrati=39/50");
-        printf("\nGrand Total");
-    }
-    else{printf("\nCheck Your Name Properly");}*/
     return 0;
 }
