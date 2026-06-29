@@ -1,0 +1,25 @@
+Q: Identify and correct the invalid variable names from this list: 1stPlayer, player_age, $score, total-marks, 
+   userName.<br><br><em><strong>Hint:</strong> Apply standard variable naming rules for your programming
+   language.</em>
+A: Variable name      Status      Reason              Corrected
+   
+   1stPlayer          invalid     Variables cannot    player1 /
+                                  start wit a         firstplayer
+                                  digit.
+
+   player_age         valid       Lowercase letter    No change
+                                  and underscores
+                                  corrrectly.
+
+   $score             invalid     special char. are   score
+                                  not allowed.
+
+   total-marks        invalid     Hypens are not      total_marks/
+                                  allowed;bcz.        totalmarks
+                                  compiler mistake 
+                                  as substraction 
+                                  operator.
+                                  
+  userName            valid       Uses std. camelCase  No change
+                                  and contain only 
+                                  char.
