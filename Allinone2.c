@@ -24,10 +24,17 @@ int main(){
     default:
     printf("\nExit");
     }
-    printf("\n__Loop__");
+    printf("\n__For Loop__");
     {for (int i=1; i<=10;i++)
     {printf("\nRoll No.%d is Present",i);
     }
+    int pin;
+    printf("\n__while Loop__");
+    while(pin!=22334){
+        printf("\nplease enter your pin");
+        scanf("%d",&pin);
+    }
+    printf("\nLogin successfull");
     }
     return 0;
 }
