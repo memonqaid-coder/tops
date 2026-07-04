@@ -1,3 +1,7 @@
+/*Q:Create a simple JavaScript function called calculateTotal 
+    that takes two numbers: itemPrice and quantity, and returns the 
+    total bill amount using arithmetic operators.
+  A:*/
 #include<stdio.h>
 float calculate_total(float itemprice,int quantity){
     float total_bill=itemprice*quantity;

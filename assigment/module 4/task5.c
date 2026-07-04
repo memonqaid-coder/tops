@@ -1,3 +1,7 @@
+/*Q:Write a code snippet that demonstrates the difference between 
+    pre-increment (++count) and post-increment (count++) by logging 
+    the values before and after using both on a followerCount variable.
+  A:*/
 #include<stdio.h>
 int main(){
 int followercount1=500;
