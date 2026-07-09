@@ -1,0 +1,25 @@
+Q:Question: Which development methodology would you recommend for this project, and why?
+  Identify two specific risks the team would face if they chose the wrong methodology for this
+  context.
+
+A:Recommended Methodology: Agile
+  For a project with frequently changing requirements and a bi-weekly feature review cycle, Agile (specifically Scrum) is the highly 
+  recommended development methodology.
+
+Why Agile?
+ >Adaptability to Change: Agile is designed to embrace evolving specifications. Instead of fixing scope early, it allows the team to 
+  adapt and reprioritize the backlog at the end of every iteration based on client feedback.
+
+ >Iterative Delivery: The two-week review cycle perfectly aligns with Agile Sprints (typically 1–4 week timeboxes). At the end of each
+  sprint, a potentially shippable increment of the product is delivered, matching the client's expectations for a working feature review.
+
+Risks of Choosing the Wrong Methodology (Waterfall):
+ >If the team incorrectly chooses Waterfall in this context, they would face the following significant risks:
+
+Scope Creep and Budget Overruns: Waterfall requires extensive upfront planning and rigid documentation. Because the requirements are 
+  fluid, changing them midway requires an expensive and time-consuming "Change Request" process, leading to severe project delays and blown 
+  budgets.
+
+Client Dissatisfaction and Misalignment: Waterfall typically presents a working product only at the very end of the lifecycle. Forcing a 
+  bi-weekly review in a Waterfall setup is structurally impossible, as development and testing happen late. The client would not see working 
+  features every two weeks, leading to a breakdown in trust and a high risk that the final product won't meet their actual needs.

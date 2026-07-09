@@ -7,10 +7,7 @@ int main() {
      if (percentage<0.1f||percentage>100.0f)
     {
       printf("\nERROR:PUT EXACT NUMBERS");
-    }
-      return 1; 
-    
-    if (percentage>=90.00f)
+    } else if (percentage>=90.00f)
     {
      printf("\nGRADE:A\nEXCELLENT");
     }
@@ -26,7 +23,7 @@ int main() {
     {
         printf("\nGRADE:D\nNEED IMPROVEMENT");
     }
-    else if(percentage<=45.00f)
+    else
     {
         printf("\nGRADE:E\nFAIL");
     }
