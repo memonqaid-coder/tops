@@ -1,0 +1,36 @@
+Q: Describe the Git workflow your team should adopt to prevent this from happening
+   again. Name at least two Git commands your team should use as part of this workflow and
+   explain the role of each command.
+
+A:The Proposed Workflow: Feature Branching 
+​   Instead of everyone working on main, the main branch is treated as sacred and reserved only for 
+   production-ready, thoroughly tested code.
+​  Isolate Development: 
+   Every new feature, bug fix, or UI tweak is developed on a separate, dedicated branch created for that 
+   specific task.
+​  Pull Requests (PRs): 
+   When a teammate finishes their code, they don't merge it themselves. They open a Pull Request on a 
+   platform like GitHub or GitLab.
+​  Code Review & Testing: 
+   The remaining teammates review the code, test it locally, and ensure it doesn’t break the layout before
+   it is officially merged into main.
+
+​  Key Git Commands for the Workflow:
+​   To make this workflow function seamlessly, your team needs to utilize the following commands:
+​  1. git checkout -b <branch-name>
+​   The Role: 
+     This command creates a brand new branch isolated from main and immediately switches your workspace 
+     to it.
+​   How it helps: 
+     By working inside a dedicated branch (e.g., git checkout -b fix-navigation-bar), the teammate's
+     incomplete code remains entirely isolated. They can push their progress to the remote repository 
+     to back up their work, but it won't affect the main branch or break the layout for anyone else until 
+     it is ready.
+​  2. git pull origin main
+​   The Role: 
+     This command fetches the latest changes from the remote main branch and integrates them into your 
+     current local branch.
+​   How it helps: 
+     Before submitting a Pull Request, a developer should run this command on their feature branch to 
+     catch and resolve any "merge conflicts" or layout breaks locally. This ensures that their code plays 
+     nicely with whatever else has been updated before it ever touches the team's shared production code.
