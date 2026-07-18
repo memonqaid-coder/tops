@@ -9,10 +9,11 @@ int main(){
     int teamcount=3;
     int userchoice;
     while(userchoice!=3){
-        printf("\n__IPL Team Manager__");
+        printf("\n\n__IPL Team Manager__");
         printf("\n1:-View your favorite IPL Teams");
         printf("\n2:-Add new team");
-        printf("\n3:-EXIT\n");
+        printf("\n3:-EXIT");
+        printf("\n Enter your choice: ");
         scanf("\n%d",&userchoice);
         while(getchar()!='\n');
         if(userchoice==1){
@@ -22,7 +23,7 @@ int main(){
             }
         }else if (userchoice==2)
         {
-           if (teamcount<5)
+           if (teamcount<10)
            {
             printf("\nEnter your new IPL team to add:");
             fgets(favoriteteams[teamcount],50,stdin);
@@ -31,12 +32,12 @@ int main(){
             printf("\n%s has been successfully added to your list",favoriteteams[teamcount]);
             teamcount++;
            }else{
-            printf("\n Your Team List Is Full");
+            printf("\n Your Team List Is Full\n");
            }
         }else if(userchoice==3){
             printf("\nWE ARE NOW EXITING!\nTHANK YOU");
         }else{
-            printf("\nINVALID CHOICE!!\nENTER VALID CHOICE\nNOTE:CHOICE MUST BE BETWEEN 1 TO 3");
+            printf("\nINVALID CHOICE!!\nENTER VALID CHOICE\nNOTE:CHOICE MUST BE BETWEEN 1 TO 3\n");
         }
     }
     return 0;
