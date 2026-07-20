@@ -1,0 +1,58 @@
+Q:Explain why an array is the correct data structure for this task compared to using 30
+  separate variables. Describe the two-step logic your program would follow: first to compute 
+  the average, then to identify the above-average days — and explain why both steps cannot be 
+  done in single loop.
+A:
+>Why an Array is Better Than 30 Separate Variables:
+Using an array (e.g., float rainfall[30];) is significantly better than creating 30 separate 
+variables (day1, day2, ..., day30) for several key reasons:
+  -Code Maintainability & Scalability:
+     Declare one continuous block of memory instead of writing 30 separate variable declarations.
+     If the requirement changes to 365 days, you only need to change the array size, not add 335
+     new variables.
+
+  -Loop Traversal: 
+     An array allows you to process all values programmatically using loops (for or while) 
+     indexed by dynamic variables like rainfall[i]. With 30 individual variables, you would be 
+     forced to write repetitive, unmaintainable code or long if-else chains.
+
+  -Contiguous Memory Storage: 
+     Array elements are stored in contiguous memory locations, making data access faster and 
+     easier to pass around to functions.
+
+>Two-Step Program Logic
+  -To solve this problem, the program follows a two-pass approach over the dataset:
+     Step 1: Compute the Monthly Average
+         Initialize a variable total = 0.0.
+              |
+         Loop through the array from index 0 to 29 (30 iterations):
+              |
+         Prompt or load each day's rainfall into rainfall[i].
+              |
+         Add rainfall[i] to total.
+              |
+         Calculate the average: average = total / 30.0.
+
+     Step 2: Identify Above-Average Days
+         Loop through the array a second time from index 0 to 29.
+               |
+         For each element, check the condition: if (rainfall[i] > average).
+               |
+         If the condition is true, print the day number (e.g., Day i + 1) along with the recorded 
+         rainfall value.
+
+>Why Both Steps Cannot Be Done in a Single Loop
+ ->Both steps cannot be completed in a single loop because the average value is mathematically 
+   dependent on the full set of 30 readings.
+
+ ->To determine whether any individual day's rainfall is above the average, you must compare it 
+   against the final monthly average.
+
+ ->The final monthly average isn't known until the very last reading (Day 30) has been entered 
+   and summed.
+
+ ->If you try to compare each day's reading to the average inside the first loop, you would be 
+   comparing against an incomplete running average (or an uninitialized variable), leading to 
+   incorrect results.
+
+-->Therefore, the complete dataset must be collected and summarized first before a second pass can compare each individual day against the completed average.
