@@ -1,0 +1,10 @@
+             Memory Diagram For Pointer
+                
+                RAM ddress      DATA Value
+                    |               |
+variables           |               |
+                     
+0*2000   ->     Likes             15 (Hypothetic 15 Likes)
+                                   ^
+                                   |
+0*2004   ->     PtrLikes        0*2000
