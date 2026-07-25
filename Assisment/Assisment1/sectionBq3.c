@@ -27,7 +27,7 @@ void printTopper(struct Student students[], int n){
     }  
     printf("\n<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>");
     printf("\n                  TOP PERFORMER                    ");   
-    printf("\n<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>");
+    printf("\n<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf("Name: %s\n", students[topIndex].name);
     printf("Marks: %.2f\n", students[topIndex].marks);
     printf("Grade: %c\n", students[topIndex].grade);  
@@ -39,17 +39,17 @@ int main(){
     printf("!!! Input Student Records !!!\n");
     for (int i = 0; i < n; i++){
         printf("--- Student %d ---\n", i + 1);
-        printf("Enter Name: ");
+        printf("\nEnter Name: ");
         scanf(" %[^\n]s", students[i].name);
-        printf("Enter Roll No: ");
+        printf("\nEnter Roll No: ");
         scanf("%d", &students[i].rollno);
-        printf("Enter Marks: ");
+        printf("\nEnter Marks: ");
         scanf("%f", &students[i].marks);
         assignGrade(&students[i]);
         printf("\n");
-    }   printf("\n===================================================");
+    }   printf("\n===================================================\n");
     printf("%-10s %-20s %-10s %-6s\n", "Roll No", "Name", "Marks", "Grade");   
-    printf("\n===================================================");
+    printf("===================================================\n");
     for (int i = 0; i < n; i++){
         printf("%-10d %-20s %-10.2f %-6c\n",
                students[i].rollno,
