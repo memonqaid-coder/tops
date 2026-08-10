@@ -1,0 +1,23 @@
+Here is a direct comparison highlighting 3 procedural C limitations that OOP classes and 
+methods resolve:
+                                
+                                       C                                           OOP
+​Global Variable        In C, global variables (taskList array      OOP addresses this by encapsulating
+Pollution & State      and taskCount) are accessible and           data (title, isDone, tasks vector) 
+Vulnerability:         alterable by any function anywhere          within private fields accessible only
+                       in the file, risking accidental             through public methods.
+                       overwrites or state corruption.                     
+  
+​Fixed Memory          The C implementation relies on fixed        The OOP version dynamically manages 
+Allocations &         array dimensions (MAX_TASKS 5,              memory using container classes 
+Buffer Overflows:     TASK_LENGTH 100), restricting               like std::vector, automatically expanding
+                      scalability and requiring explicit          storage as new tasks are added
+                      bounds checks to avoid array                without hardcoding size caps.
+                      out-of-bounds errors. 
+
+​Tight Coupling &     In procedural C, the data structure          OOP decouples data from logic
+Lack of Data         layout (2D character array) and              by treating a Task as an independent
+Abstraction:         management logic are tightly coupled.        object with its own behavior 
+                     Any change to how tasks are represented      (markDone(), display()), allowing TaskList
+                     requires rewriting every loop and            to manipulate tasks cleanly without
+                     function accessing the array.                exposing internal representation details.
