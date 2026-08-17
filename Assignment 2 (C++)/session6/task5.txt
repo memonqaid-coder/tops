@@ -1,0 +1,29 @@
+Core Differences
+Encapsulation is about Data Hiding and Protection (How data is stored and guarded).
+It bundles data (variables) and methods together into a single unit (a class) while restricting direct access to object state using access modifiers like private or protected.
+
+Abstraction is about Complexity Hiding (What a system does, not how it works).
+It presents a simple high-level interface to the outside world while hiding the internal logic and operational complexity behind the scenes.
+
+Real-World Social Media Examples
+1. Encapsulation (Example: WhatsApp Direct Messaging)
+What it hides: The raw variables storing your message data and security tokens.
+
+How it works:
+
+Your chatMessage text and encryptionKey are kept private inside the Message class.
+
+You cannot directly alter another user's sent message state from the outside.
+
+Instead, you interact through public getter and setter methods like sendMessage() or editMessage(), which perform internal validation before changing the underlying private data.
+
+2. Abstraction (Example: Instagram Voice/Video Call or Like Button)
+What it hides: Complex underlying networks, server requests, database queries, and video codecs.
+
+How it works:
+
+The Interface: When you double-tap a post to like it, Instagram provides a single, simple action: a heart animation lights up.
+
+The Hidden Logic: Under the hood, Instagram creates an API payload, authenticates your session token, sends an HTTP request across global servers, updates a database counter, and pushes notifications to the creator.
+
+As a user, you only interact with the simple interface (likePost()) without needing to know or execute the multi-step background code.
