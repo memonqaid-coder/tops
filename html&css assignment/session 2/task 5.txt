@@ -1,0 +1,6 @@
+Zomato and Swiggy are the primary delivery platforms in India,
+while Uber Eats operates globally (having sold its Indian operations to Zomato).
+App NameDelivery ChargesRating:
+Zomato₹30 – ₹60 (Free with Gold membership)4.5 / 5
+Swiggy₹35 – ₹65 (Free with One membership)4.4 / 5
+Uber Eats$1.99 – $5.99 (Free with Uber One membership)4.3 / 5

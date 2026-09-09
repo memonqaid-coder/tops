@@ -1,0 +1,9 @@
+>Standard DOM Structure for Instagram Post Images:
+
+  >Image Tag: <img>
+
+>Typically has classes like x5yr21d xu3j5b3 x1889slg... or _aagt
+
+  >Container Tag: <div>
+
+>>The direct wrapper around the image often serves as the aspect-ratio or clipping container. Historically, Instagram used the class _aagv for this wrapper div, though modern builds often use atomic Tailwind-like classes (e.g., <div class="_aagv"> or <div class="x10l6tqk x13vifvy...">).

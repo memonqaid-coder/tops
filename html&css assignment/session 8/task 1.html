@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Card - Responsive</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f2f6;
+        }
+
+        .flipkart-blue {
+            color: #2874f0;
+        }
+
+        .flipkart-bg-blue {
+            background-color: #2874f0;
+        }
+
+        .flipkart-green {
+            color: #388e3c;
+        }
+
+        .flipkart-bg-green {
+            background-color: #388e3c;
+        }
+
+        /* Wishlist Heart Animation */
+        .heart-btn:hover i {
+            color: #ff4343;
+            transform: scale(1.15);
+        }
+
+        .heart-btn i {
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Card elevation effect */
+        .product-card {
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Smooth image zoom on hover */
+        .product-img-wrapper img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 md:p-10">
+
+    <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg bg-white rounded-lg border border-gray-200 overflow-hidden product-card relative">
+        
+        <!-- Wishlist Button -->
+        <button class="heart-btn absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm border border-gray-100 flex items-center justify-center shadow-sm text-gray-400 hover:bg-white transition-all cursor-pointer" aria-label="Add to Wishlist" onclick="toggleWishlist(this)">
+            <i class="fa-solid fa-heart text-base"></i>
+        </button>
+
+        <div class="product-img-wrapper relative w-full h-64 sm:h-72 bg-gray-50 flex items-center justify-center p-6 overflow-hidden border-b border-gray-100">
+            <img 
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600" 
+                alt="Sony WH-1000XM4 Wireless Headphones" 
+                class="max-h-full max-w-full object-contain"
+                onerror="this.src='https://placehold.co/400x400/f3f4f6/374151?text=Product+Image'"
+            />
+            
+            <!-- Category Tag -->
+            <span class="absolute bottom-3 left-3 bg-gray-900/80 text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
+                Top Rated
+            </span>
+        </div>
+
+        <div class="p-4 sm:p-5 flex flex-col gap-2.5">
+            
+            <!-- Brand & Title -->
+            <div>
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Sony</p>
+                <h3 class="text-sm sm:text-base font-medium text-gray-800 line-clamp-2 leading-snug hover:text-blue-600 cursor-pointer">
+                    WH-1000XM4 Wireless Active Noise Cancelling Headphones with Mic
+                </h3>
+            </div>
+
+            <div class="flex items-center gap-2 my-0.5">
+                <!-- Rating Badge -->
+                <div class="flipkart-bg-green text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
+                    <span>4.6</span>
+                    <i class="fa-solid fa-star text-[10px]"></i>
+                </div>
+                
+                <!-- Total Ratings -->
+                <span class="text-xs font-medium text-gray-500">(18,420 ratings)</span>
+
+                <!-- Flipkart Assured Badge -->
+                <div class="ml-auto flex items-center gap-1 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100">
+                    <span class="text-[11px] font-bold italic tracking-tighter flipkart-blue">F-Assured</span>
+                    <i class="fa-solid fa-circle-check flipkart-blue text-[10px]"></i>
+                </div>
+            </div>
+
+            <div class="flex items-baseline gap-2 mt-1">
+                <!-- Current Price -->
+                <span class="text-xl sm:text-2xl font-bold text-gray-900">₹19,990</span>
+                
+                <!-- Original Price -->
+                <span class="text-xs sm:text-sm text-gray-400 line-through font-normal">₹29,990</span>
+                
+                <!-- Discount Percentage -->
+                <span class="text-xs sm:text-sm font-bold flipkart-green">33% off</span>
+            </div>
+
+            <!-- Delivery Info -->
+            <div class="flex items-center gap-1.5 text-xs text-gray-600 mt-0.5">
+                <i class="fa-solid fa-truck-fast text-gray-400"></i>
+                <span>Free delivery by <strong class="text-gray-800 font-semibold">Tomorrow, 11 AM</strong></span>
+            </div>
+
+            <!-- Bank Offer Highlight -->
+            <div class="bg-emerald-50 border border-emerald-100 rounded p-2 text-xs text-emerald-800 flex items-start gap-1.5 mt-1">
+                <i class="fa-solid fa-tag text-emerald-600 mt-0.5 text-[11px]"></i>
+                <span>Bank Offer: Extra 10% Instant Discount on HDFC Bank Cards</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 mt-3 pt-2 border-t border-gray-100">
+                <button onclick="handleAddToCart()" class="w-full bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-semibold text-xs sm:text-sm py-2.5 px-3 rounded shadow-sm transition-colors flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>ADD TO CART</span>
+                </button>
+                <button onclick="handleBuyNow()" class="w-full flipkart-bg-blue hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-xs sm:text-sm py-2.5 px-3 rounded shadow-sm transition-colors flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>BUY NOW</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification for Interactions -->
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs sm:text-sm px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2">
+        <i id="toast-icon" class="fa-solid fa-circle-info text-blue-400"></i>
+        <span id="toast-message">Item added to cart!</span>
+    </div>
+
+    <script>
+        // Wishlist Toggle Functionality
+        let isWishlisted = false;
+        function toggleWishlist(button) {
+            isWishlisted = !isWishlisted;
+            const icon = button.querySelector('i');
+            
+            if (isWishlisted) {
+                icon.classList.remove('text-gray-400');
+                icon.classList.add('text-red-500');
+                showToast('Added to your Wishlist!', 'fa-solid fa-heart text-red-500');
+            } else {
+                icon.classList.remove('text-red-500');
+                icon.classList.add('text-gray-400');
+                showToast('Removed from Wishlist', 'fa-solid fa-circle-info text-gray-400');
+            }
+        }
+
+        function handleAddToCart() {
+            showToast('Added to Cart successfully!', 'fa-solid fa-circle-check text-green-400');
+        }
+
+        function handleBuyNow() {
+            showToast('Redirecting to Checkout...', 'fa-solid fa-bolt text-amber-400');
+        }
+
+        // Custom Toast Notification System
+        let toastTimeout;
+        function showToast(message, iconClass = 'fa-solid fa-circle-info text-blue-400') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMessage.textContent = message;
+            toastIcon.className = iconClass;
+
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Movie Grid</title>
+    <style>
+        /* Base Setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #1a1a24; /* Dark BookMyShow theme */
+            color: #ffffff;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        /* Responsive Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 1. RELATIVE PARENT: Establishes a coordinate context for absolute children */
+        .poster-card {
+            position: relative; 
+            background-color: #2b2b36;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Poster Image */
+        .poster-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 2. ABSOLUTE CHILD: Positioned relative to .poster-card */
+        .badge-new {
+            position: absolute;
+            top: 12px;                  /* 12px down from top edge of card */
+            left: 12px;                 /* 12px in from left edge of card */
+            z-index: 10;                /* Sits on top of the image */
+            background-color: #f84464;  /* BookMyShow Accent Red */
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Content Details */
+        .movie-info {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            color: #9999a3;
+            font-size: 13px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="max-width: 1000px; margin: 0 auto 24px auto;">Recommended Movies</h2>
+
+    <div class="movie-grid">
+        
+        <!-- Poster Card 1 (With Absolute 'New' Badge) -->
+        <article class="poster-card">
+            <span class="badge-new">New</span>
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400" alt="Inception Movie Poster">
+            <div class="movie-info">
+                <h3 class="movie-title">Inception</h3>
+                <p class="movie-meta">Sci-Fi/Action • 2h 28m</p>
+            </div>
+        </article>
+
+        <!-- Poster Card 2 -->
+        <article class="poster-card">
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=400" alt="Interstellar Movie Poster">
+            <div class="movie-info">
+                <h3 class="movie-title">Interstellar</h3>
+                <p class="movie-meta">Sci-Fi/Drama • 2h 49m</p>
+            </div>
+        </article>
+
+        <!-- Poster Card 3 -->
+        <article class="poster-card">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400" alt="The Dark Knight Movie Poster">
+            <div class="movie-info">
+                <h3 class="movie-title">The Dark Knight</h3>
+                <p class="movie-meta">Action/Crime • 2h 32m</p>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Movie Grid</title>
+    <style>
+        /* Base Setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #1a1a24; /* Dark BookMyShow theme */
+            color: #ffffff;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        /* Responsive Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 1. RELATIVE PARENT: Establishes a coordinate context for absolute children */
+        .poster-card {
+            position: relative; 
+            background-color: #2b2b36;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Poster Image */
+        .poster-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 2. ABSOLUTE CHILD: Positioned relative to .poster-card */
+        .badge-new {
+            position: absolute;
+            top: 12px;                  /* 12px down from top edge of card */
+            left: 12px;                 /* 12px in from left edge of card */
+            z-index: 10;                /* Sits on top of the image */
+            background-color: #f84464;  /* BookMyShow Accent Red */
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Content Details */
+        .movie-info {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            color: #9999a3;
+            font-size: 13px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="max-width: 1000px; margin: 0 auto 24px auto;">Recommended Movies</h2>
+
+    <div class="movie-grid">
+        
+        <!-- Poster Card 1 (With Absolute 'New' Badge) -->
+        <article class="poster-card">
+            <span class="badge-new">New</span>
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400" alt="Inception Movie Poster">
+            <div class="movie-info">
+                <h3 class="movie-title">Inception</h3>
+                <p class="movie-meta">Sci-Fi/Action • 2h 28m</p>
+            </div>
+        </article>
+
+        <!-- Poster Card 2 -->
+        <article class="poster-card">
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=400" alt="Interstellar Movie Poster">
+            <div class="movie-info">
+                <h3 class="movie-title">Interstellar</h3>
+                <p class="movie-meta">Sci-Fi/Drama • 2h 49m</p>
+            </div>
+        </article>
+
+        <!-- Poster Card 3 -->
+        <article class="poster-card">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400" alt="The Dark Knight Movie Poster">
+            <div class="movie-info">
+                <h3 class="movie-title">The Dark Knight</h3>
+                <p class="movie-meta">Action/Crime • 2h 32m</p>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+</html>

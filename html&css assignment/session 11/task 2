@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Movie Review Card</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f1017;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Review Card Styling */
+        .bms-review-card {
+            background-color: #1a1a24;
+            border: 1px solid #2a2a38;
+            border-radius: 12px;
+            max-width: 580px;
+            margin: 0 auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .poster-img {
+            width: 110px;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* BookMyShow Rating Pill */
+        .rating-badge {
+            background-color: #2b2b36;
+            border-radius: 6px;
+            padding: 6px 12px;
+        }
+
+        .avatar-img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .badge-tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container py-5">
+        
+        <!-- BOOKMYSHOW MOVIE REVIEW CARD -->
+        <article class="bms-review-card p-4">
+            
+            <!-- SECTION 1: MOVIE HEADER (Poster + Title + Rating) -->
+            <div class="d-flex gap-3 pb-3 border-bottom border-secondary border-opacity-25">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=300" alt="Inception Poster" class="poster-img flex-shrink-0 shadow">
+                
+                <div class="d-flex flex-column justify-content-between flex-grow-1">
+                    <div>
+                        <!-- Title using fs-3 (large size) & fw-bold (700 weight) -->
+                        <h1 class="fs-3 fw-bold text-white mb-1 tracking-tight">Inception</h1>
+                        
+                        <!-- Genres using fs-7 / small size & fw-normal -->
+                        <p class="small text-secondary fw-normal mb-2">Sci-Fi / Action &bull; 2h 28m &bull; UA</p>
+                        
+                        <!-- Tags using badge utilities -->
+                        <div class="d-flex gap-1 mb-2">
+                            <span class="badge badge-tag fw-medium text-light">4K IMAX</span>
+                            <span class="badge badge-tag fw-medium text-light">Dolby Atmos</span>
+                        </div>
+                    </div>
+
+                    <!-- Rating Pill using fs-5, fw-semibold, and fw-bold -->
+                    <div class="rating-badge d-inline-flex align-items-center gap-2 align-self-start">
+                        <i class="bi bi-star-fill text-danger fs-5"></i>
+                        <div>
+                            <span class="fs-5 fw-bold text-white">8.8</span>
+                            <span class="fs-7 fw-normal text-secondary">/10</span>
+                            <span class="fs-7 text-secondary fw-light ms-1">(240K Votes)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: USER REVIEW CONTENT -->
+            <div class="pt-3">
+                
+                <!-- Reviewer Bio & Rating given -->
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100" alt="Reviewer Avatar" class="avatar-img">
+                        <div>
+                            <!-- User Name using fs-6 & fw-semibold (600 weight) -->
+                            <h2 class="fs-6 fw-semibold text-white mb-0">Ananya Roy</h2>
+                            <!-- Timestamp using small & fw-light (300 weight) -->
+                            <span class="small fw-light text-secondary">Booked on BookMyShow &bull; 2 days ago</span>
+                        </div>
+                    </div>
+
+                    <!-- User Rating Badge -->
+                    <div class="d-flex align-items-center gap-1 text-warning fs-6 fw-semibold">
+                        <i class="bi bi-star-fill"></i>
+                        <span>10/10</span>
+                    </div>
+                </div>
+
+                <!-- Review Headline using fs-5 & fw-bold -->
+                <h3 class="fs-5 fw-bold text-white mb-2">A Mind-Bending Masterpiece That Demands Your Attention</h3>
+
+                <!-- Review Body using fs-6, fw-normal, lh-base, and text-light/secondary -->
+                <p class="fs-6 fw-normal text-light lh-base mb-3 opacity-90">
+                    Christopher Nolan delivers an unparalleled cinematic experience. Hans Zimmer’s score elevates every single sequence, especially during the dream-within-a-dream third act. The visual effects hold up remarkably well and seeing this on the big screen remains unmatched.
+                </p>
+
+                <!-- Interactive Footer Utility Bar -->
+                <div class="d-flex align-items-center justify-content-between pt-2">
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-sm btn-outline-secondary border-0 text-secondary fw-semibold d-inline-flex align-items-center gap-1 p-0">
+                            <i class="bi bi-hand-thumbs-up fs-6"></i>
+                            <span class="fs-7">1.2K Likes</span>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary border-0 text-secondary fw-semibold d-inline-flex align-items-center gap-1 p-0">
+                            <i class="bi bi-chat-dots fs-6"></i>
+                            <span class="fs-7">48 Comments</span>
+                        </button>
+                    </div>
+                    <!-- Hashtag styled with fw-medium & fs-7 -->
+                    <span class="fs-7 fw-medium text-danger">#MustWatch</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Style Restaurant List - Bootstrap Color Utilities</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: Okra, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #1c1c1c;
+        }
+
+        .restaurant-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay badges on image */
+        .status-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .offer-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container py-5">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="h3 fw-bold mb-1">Delivery Restaurants in Your Area</h1>
+            <p class="text-secondary small mb-0">Explore top rated dining options with exclusive discounts and live status updates.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- RESTAURANT CARD 1: OPEN + HIGH RATING + PROMO OFFER -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="restaurant-card h-100">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=500" alt="The Grand Feast">
+                        
+                        <!-- Color Utility 1: STATUS BADGE (bg-success & text-white) -->
+                        <span class="badge bg-success text-white status-badge px-2 py-1 rounded-2">
+                            <i class="bi bi-clock-fill me-1"></i> Open Now
+                        </span>
+
+                        <!-- Color Utility 2: OFFER BADGE (bg-primary & text-white) -->
+                        <span class="badge bg-primary text-white offer-tag px-3 py-2 rounded-2">
+                            <i class="bi bi-lightning-charge-fill me-1"></i> 50% OFF up to ₹100
+                        </span>
+                    </div>
+
+                    <div class="p-3">
+                        <div class="d-flex align-items-start justify-content-between mb-2">
+                            <div>
+                                <h2 class="h5 fw-bold mb-0 text-dark">The Grand Feast</h2>
+                                <p class="text-secondary small mb-0">North Indian, Mughlai, Biryani</p>
+                            </div>
+                            
+                            <!-- Color Utility 3: RATING BADGE (bg-success & text-white) -->
+                            <span class="badge bg-success text-white fs-6 px-2 py-1 d-inline-flex align-items-center gap-1 rounded-2">
+                                <span>4.5</span>
+                                <i class="bi bi-star-fill fs-7"></i>
+                            </span>
+                        </div>
+
+                        <!-- Extra details using Bootstrap text color utilities -->
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top border-light-subtle">
+                            <span class="text-muted small"><i class="bi bi-bicycle me-1"></i> 25-30 min</span>
+                            <span class="fw-semibold small text-dark">₹350 for one</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- RESTAURANT CARD 2: CLOSED + AVERAGE RATING + BANK OFFER -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="restaurant-card h-100">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=500" alt="Urban Bites Cafe" style="filter: grayscale(0.2);">
+                        
+                        <!-- Color Utility 1: STATUS BADGE (bg-danger & text-white) -->
+                        <span class="badge bg-danger text-white status-badge px-2 py-1 rounded-2">
+                            <i class="bi bi-x-circle-fill me-1"></i> Closed
+                        </span>
+
+                        <!-- Color Utility 2: OFFER BADGE (bg-warning & text-dark) -->
+                        <span class="badge bg-warning text-dark offer-tag px-3 py-2 rounded-2">
+                            <i class="bi bi-credit-card-fill me-1"></i> Flat ₹150 OFF on HDFC
+                        </span>
+                    </div>
+
+                    <div class="p-3">
+                        <div class="d-flex align-items-start justify-content-between mb-2">
+                            <div>
+                                <h2 class="h5 fw-bold mb-0 text-dark">Urban Bites Cafe</h2>
+                                <p class="text-secondary small mb-0">Italian, Fast Food, Desserts</p>
+                            </div>
+                            
+                            <!-- Color Utility 3: RATING BADGE (bg-warning & text-dark for average rating) -->
+                            <span class="badge bg-warning text-dark fs-6 px-2 py-1 d-inline-flex align-items-center gap-1 rounded-2">
+                                <span>3.8</span>
+                                <i class="bi bi-star-fill fs-7"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top border-light-subtle">
+                            <!-- Text utility: text-danger for closed notice -->
+                            <span class="text-danger small fw-semibold"><i class="bi bi-exclamation-triangle-fill me-1"></i> Opens at 7:00 PM</span>
+                            <span class="fw-semibold small text-dark">₹250 for one</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- RESTAURANT CARD 3: BUSY/PRE-ORDER + PROMO OFFER -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="restaurant-card h-100">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500" alt="Pizza Hub & Grill">
+                        
+                        <!-- Color Utility 1: STATUS BADGE (bg-secondary & text-white for Pre-order/Busy) -->
+                        <span class="badge bg-secondary text-white status-badge px-2 py-1 rounded-2">
+                            <i class="bi bi-clock-history me-1"></i> Pre-Order
+                        </span>
+
+                        <!-- Color Utility 2: OFFER BADGE (bg-danger & text-white for Special Deal) -->
+                        <span class="badge bg-danger text-white offer-tag px-3 py-2 rounded-2">
+                            <i class="bi bi-tag-fill me-1"></i> Buy 1 Get 1 Free
+                        </span>
+                    </div>
+
+                    <div class="p-3">
+                        <div class="d-flex align-items-start justify-content-between mb-2">
+                            <div>
+                                <h2 class="h5 fw-bold mb-0 text-dark">Pizza Hub & Grill</h2>
+                                <p class="text-secondary small mb-0">Pizzas, American, Beverages</p>
+                            </div>
+                            
+                            <!-- Color Utility 3: RATING BADGE (bg-success & text-white) -->
+                            <span class="badge bg-success text-white fs-6 px-2 py-1 d-inline-flex align-items-center gap-1 rounded-2">
+                                <span>4.8</span>
+                                <i class="bi bi-star-fill fs-7"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top border-light-subtle">
+                            <span class="text-muted small"><i class="bi bi-bicycle me-1"></i> 40-45 min</span>
+                            <span class="fw-semibold small text-dark">₹400 for one</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

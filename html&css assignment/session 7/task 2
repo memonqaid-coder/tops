@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Horizontal Playlist</title>
+    <style>
+        /* Base Dark Theme Setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .playlist-wrapper {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .playlist-heading {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        /* 1. HORIZONTAL FLEX CONTAINER: Scrolls horizontally for song cards */
+        .playlist-bar {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            /* Smooth custom scrollbar for dark mode */
+            scrollbar-width: thin;
+            scrollbar-color: #535353 #121212;
+        }
+
+        /* 2. CARD FLEX CONTAINER: Uses flex-direction column to stack cover & text */
+        .song-card {
+            flex: 0 0 160px; /* Prevents cards from shrinking */
+            background-color: #181818;
+            border-radius: 8px;
+            padding: 12px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            
+            /* Inner Card Flex Layout */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-card:hover {
+            background-color: #282828;
+            transform: translateY(-4px);
+        }
+
+        /* Album Artwork */
+        .album-cover {
+            width: 100%;
+            height: 160px;
+            border-radius: 6px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        /* 3. TEXT FLEX CONTAINER: Centered vertically using align-items: center */
+        .song-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers along the column main axis */
+            align-items: center;     /* Vertically & horizontally aligns centered text */
+            flex-grow: 1;            /* Fills remaining card height */
+            text-align: center;
+        }
+
+        .song-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 4px 0;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .artist-name {
+            font-size: 12px;
+            color: #b3b3b3;
+            margin: 0;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="playlist-wrapper">
+        <h2 class="playlist-heading">Recently Played</h2>
+
+        <!-- Horizontal Scroll Container -->
+        <div class="playlist-bar">
+
+            <!-- Song Card 1 -->
+            <div class="song-card">
+                <img class="album-cover" src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=300" alt="Blinding Lights Cover">
+                <div class="song-details">
+                    <p class="song-title">Blinding Lights</p>
+                    <p class="artist-name">The Weeknd</p>
+                </div>
+            </div>
+
+            <!-- Song Card 2 -->
+            <div class="song-card">
+                <img class="album-cover" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=300" alt="As It Was Cover">
+                <div class="song-details">
+                    <p class="song-title">As It Was</p>
+                    <p class="artist-name">Harry Styles</p>
+                </div>
+            </div>
+
+            <!-- Song Card 3 -->
+            <div class="song-card">
+                <img class="album-cover" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=300" alt="Starboy Cover">
+                <div class="song-details">
+                    <p class="song-title">Starboy</p>
+                    <p class="artist-name">The Weeknd, Daft Punk</p>
+                </div>
+            </div>
+
+            <!-- Song Card 4 -->
+            <div class="song-card">
+                <img class="album-cover" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=300" alt="Levitating Cover">
+                <div class="song-details">
+                    <p class="song-title">Levitating</p>
+                    <p class="artist-name">Dua Lipa</p>
+                </div>
+            </div>
+
+            <!-- Song Card 5 -->
+            <div class="song-card">
+                <img class="album-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=300" alt="Heat Waves Cover">
+                <div class="song-details">
+                    <p class="song-title">Heat Waves</p>
+                    <p class="artist-name">Glass Animals</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

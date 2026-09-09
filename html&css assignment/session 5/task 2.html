@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Fashion Sale Banner</title>
+
+    <!-- Google Fonts import for a modern fashion typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,800&display=swap" rel="stylesheet">
+
+    <!-- Internal CSS -->
+    <style>
+        /* Global Page Setup */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Banner Main Container */
+        .myntra-banner {
+            width: 100%;
+            max-width: 600px;
+            /* Gradient background mixing Myntra's signature pink and orange tones */
+            background: linear-gradient(135deg, #ff3f6c 0%, #ff527b 50%, #ff8c00 100%);
+            border-radius: 12px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 63, 108, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Category Sub-heading */
+        .banner-subtitle {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff0f3;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0 0 8px 0;
+        }
+
+        /* Main Offer Heading */
+        .banner-title {
+            font-size: 42px;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-style: italic;
+            margin: 0;
+            line-height: 1.1;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Offer Text Box with Custom Background & Font */
+        .banner-discount {
+            display: inline-block;
+            background-color: #ffffff; /* Crisp white badge contrast */
+            color: #ff3f6c;            /* Distinct Myntra Brand Pink */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            padding: 8px 20px;
+            margin: 16px 0;
+            border-radius: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            text-transform: uppercase;
+        }
+
+        /* Call-To-Action Button */
+        .banner-cta {
+            display: inline-block;
+            background-color: #282c3f; /* Deep charcoal for high contrast */
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 12px 32px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .banner-cta:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+        }
+
+        /* Fine Print */
+        .banner-footer {
+            font-size: 11px;
+            color: #ffffff;
+            opacity: 0.85;
+            margin-top: 14px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Myntra Offer Banner Section -->
+    <aside class="myntra-banner" aria-label="Special Discount Banner">
+        <p class="banner-subtitle">Grand Fashion Festival</p>
+        <h2 class="banner-title">End Of Reason Sale</h2>
+        
+        <div class="banner-discount">
+            50% - 80% OFF
+        </div>
+
+        <br>
+        <a href="#shop-now" class="banner-cta">Shop Now</a>
+
+        <p class="banner-footer">*T&amp;C Apply • Valid on select brands only</p>
+    </aside>
+
+</body>
+</html>

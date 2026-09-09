@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Cards - Bootstrap Spacing Utilities</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f1f2f6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .flipkart-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .flipkart-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-wrapper {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+
+        .card-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .fk-rating {
+            background-color: #388e3c;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .btn-buy {
+            background-color: #fb641b;
+            color: #ffffff;
+            font-weight: 700;
+            border: none;
+        }
+
+        .btn-buy:hover {
+            background-color: #e55511;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container py-4">
+        <h1 class="h4 fw-bold text-dark mb-4">Flipkart Cards — Bootstrap Spacing Utility Levels</h1>
+
+        <div class="row align-items-start">
+
+            <!-- LEVEL 1: COMPACT SPACING (m-2, p-2) -->
+            <div class="col-12 col-md-4">
+                <div class="p-2 border bg-white rounded-3 mb-3">
+                    <span class="badge bg-secondary mb-2">Level 1: Compact Spacing</span>
+                    <p class="small text-muted mb-0"><code>m-2</code> (0.5rem margin) & <code>p-2</code> (0.5rem padding)</p>
+                </div>
+
+                <!-- Flipkart Card 1 -->
+                <article class="flipkart-card m-2 p-2">
+                    <div class="card-img-wrapper p-1">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400" alt="Wireless Headphones">
+                    </div>
+                    <div class="mt-2">
+                        <p class="text-muted extra-small mb-0" style="font-size: 11px;">SONY</p>
+                        <h2 class="h6 text-truncate mb-1" title="WH-1000XM5 Wireless Headphones">WH-1000XM5 Headphones</h2>
+                        
+                        <div class="d-flex align-items-center gap-1 mb-2">
+                            <span class="fk-rating">4.6 <i class="bi bi-star-fill"></i></span>
+                            <span class="text-muted small fs-7">(12.4K)</span>
+                        </div>
+
+                        <div class="d-flex align-items-baseline gap-2 mb-2">
+                            <span class="fw-bold fs-6">₹26,990</span>
+                            <span class="text-decoration-line-through text-muted small">₹34,990</span>
+                        </div>
+
+                        <button class="btn btn-buy btn-sm w-100 py-1">Buy Now</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- LEVEL 2: MEDIUM SPACING (m-3, p-3) -->
+            <div class="col-12 col-md-4">
+                <div class="p-2 border bg-white rounded-3 mb-3">
+                    <span class="badge bg-primary mb-2">Level 2: Medium Spacing</span>
+                    <p class="small text-muted mb-0"><code>m-3</code> (1.0rem margin) & <code>p-3</code> (1.0rem padding)</p>
+                </div>
+
+                <!-- Flipkart Card 2 -->
+                <article class="flipkart-card m-3 p-3">
+                    <div class="card-img-wrapper p-2">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400" alt="Smartwatch">
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-muted small mb-0">NOISE</p>
+                        <h2 class="h6 text-truncate mb-2" title="ColorFit Pro 4 Smartwatch">ColorFit Pro 4 Smartwatch</h2>
+                        
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="fk-rating">4.3 <i class="bi bi-star-fill"></i></span>
+                            <span class="text-muted small">(8.9K)</span>
+                        </div>
+
+                        <div class="d-flex align-items-baseline gap-2 mb-3">
+                            <span class="fw-bold fs-5">₹2,999</span>
+                            <span class="text-decoration-line-through text-muted small">₹5,999</span>
+                        </div>
+
+                        <button class="btn btn-buy w-100 py-2">Buy Now</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- LEVEL 3: SPACIOUS / EXPENSIVE SPACING (m-4, p-4) -->
+            <div class="col-12 col-md-4">
+                <div class="p-2 border bg-white rounded-3 mb-3">
+                    <span class="badge bg-success mb-2">Level 3: Spacious</span>
+                    <p class="small text-muted mb-0"><code>m-4</code> (1.5rem margin) & <code>p-4</code> (1.5rem padding)</p>
+                </div>
+
+                <!-- Flipkart Card 3 -->
+                <article class="flipkart-card m-4 p-4">
+                    <div class="card-img-wrapper p-3">
+                        <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=400" alt="Bluetooth Speaker">
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-muted small mb-1">JBL</p>
+                        <h2 class="h5 text-truncate mb-3" title="Flip 6 Waterproof Speaker">Flip 6 Bluetooth Speaker</h2>
+                        
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="fk-rating">4.5 <i class="bi bi-star-fill"></i></span>
+                            <span class="text-muted small">(5.6K)</span>
+                        </div>
+
+                        <div class="d-flex align-items-baseline gap-2 mb-4">
+                            <span class="fw-bold fs-4">₹9,999</span>
+                            <span class="text-decoration-line-through text-muted">₹13,999</span>
+                        </div>
+
+                        <button class="btn btn-buy w-100 py-2 fs-6">Buy Now</button>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

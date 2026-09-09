@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Movie Details</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f1017;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Hero Banner Container with Blurred Backdrop */
+        .movie-banner {
+            position: relative;
+            background: linear-gradient(90deg, #1a1a24 0%, rgba(26, 26, 36, 0.85) 50%, rgba(26, 26, 36, 0.6) 100%),
+                        url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200') center/cover no-repeat;
+            padding: 40px 0;
+            border-bottom: 1px solid #2b2b38;
+        }
+
+        /* Movie Poster Card Styling */
+        .poster-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .poster-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .poster-img {
+            width: 100%;
+            height: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* In-poster badge */
+        .status-badge {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+            font-size: 13px;
+            text-align: center;
+            padding: 8px 0;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Rating Box */
+        .rating-card {
+            background-color: #22232f;
+            border: 1px solid #333446;
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+
+        /* Genre Tag Pills */
+        .genre-pill {
+            background-color: #2b2c3a;
+            color: #e0e0e0;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .genre-pill:hover {
+            background-color: #3b3c4e;
+            color: #ffffff;
+        }
+
+        /* BookMyShow Action Button */
+        .btn-bms {
+            background-color: #f84464; /* BookMyShow Primary Red */
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 12px 36px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 14px rgba(248, 68, 100, 0.4);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-bms:hover {
+            background-color: #d83350;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Movie Details Hero Banner -->
+    <section class="movie-banner">
+        <div class="container py-md-4">
+            
+            <!-- BOOTSTRAP GRID ROW -->
+            <div class="row g-4 align-items-center">
+
+                <!-- Column 1: Movie Poster Image (4 Columns on Desktop) -->
+                <div class="col-12 col-md-5 col-lg-4">
+                    <div class="poster-wrapper mx-auto ms-md-0" style="max-width: 320px;">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=600" alt="Inception Movie Poster" class="poster-img">
+                        <div class="status-badge fw-semibold">In Cinemas • Releasing Sep 18</div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Movie Details & Action (8 Columns on Desktop) -->
+                <div class="col-12 col-md-7 col-lg-8">
+                    <div class="pe-lg-4">
+                        
+                        <!-- Movie Title -->
+                        <h1 class="display-5 fw-bold mb-2">Inception</h1>
+
+                        <!-- Rating Section -->
+                        <div class="rating-card d-inline-flex align-items-center gap-3 mb-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-star-fill text-warning fs-4"></i>
+                                <div>
+                                    <span class="fs-5 fw-bold">8.8/10</span>
+                                    <span class="text-muted small"> (240.5K Votes)</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-light btn-sm px-3 ms-2 fw-semibold">Rate now</button>
+                        </div>
+
+                        <!-- Language & Screen Format Badges -->
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-light text-dark fs-7">2D, 3D, IMAX 3D</span>
+                            <span class="badge bg-light text-dark fs-7">English, Hindi, Tamil, Telugu</span>
+                        </div>
+
+                        <!-- Runtime & Release Info -->
+                        <p class="text-secondary mb-3">
+                            <span>2h 28m</span> • 
+                            <span>Sci-Fi, Action, Thriller</span> • 
+                            <span>UA</span> • 
+                            <span>16 Jul, 2010</span>
+                        </p>
+
+                        <!-- Genre Pills -->
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <a href="#" class="genre-pill">Sci-Fi</a>
+                            <a href="#" class="genre-pill">Action</a>
+                            <a href="#" class="genre-pill">Mind-Bending</a>
+                            <a href="#" class="genre-pill">Adventure</a>
+                        </div>
+
+                        <!-- Synopsis / Description -->
+                        <div class="mb-4">
+                            <h2 class="h6 text-uppercase text-muted fw-bold mb-2">About the Movie</h2>
+                            <p class="text-light-50 leading-relaxed mb-0" style="max-width: 650px; color: #c3c4d3;">
+                                Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state. Cobb is offered a chance at redemption if he can accomplish the impossible: inception.
+                            </p>
+                        </div>
+
+                        <!-- Booking Action Button -->
+                        <div class="pt-2">
+                            <button class="btn btn-bms d-inline-flex align-items-center gap-2">
+                                <i class="bi bi-ticket-perforated-fill fs-5"></i>
+                                <span>Book tickets</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> <!-- End Row -->
+
+        </div>
+    </section>
+
+</body>
+</html>

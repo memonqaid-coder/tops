@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Theme Switcher</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Smooth transitions when switching themes */
+        .theme-container, 
+        .card, 
+        .btn {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Border tweaks for dark vs light card states */
+        .theme-container.bg-dark .card {
+            background-color: #1a1a24 !important;
+            border-color: #2a2a38 !important;
+        }
+
+        .theme-container.bg-light .card {
+            background-color: #ffffff !important;
+            border-color: #e0e0e0 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MAIN ROOT CONTAINER (Starts in Dark Theme) -->
+    <div id="themeContainer" class="theme-container bg-dark text-light min-vh-100 d-flex flex-column">
+        
+        <!-- NAVBAR WITH THEME SWITCHER BUTTON -->
+        <nav class="navbar border-bottom border-secondary border-opacity-25 py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-reset" href="#">
+                    <i class="bi bi-film text-danger fs-4"></i>
+                    <span>BookMyShow</span>
+                </a>
+
+                <!-- Theme Switcher Button -->
+                <button id="themeToggleBtn" class="btn btn-outline-warning d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2">
+                    <i id="themeIcon" class="bi bi-sun-fill"></i>
+                    <span id="themeLabel" class="fw-semibold small">Light Mode</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- PAGE CONTENT CONTAINER -->
+        <main class="container my-auto py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    
+                    <!-- Featured Movie Card -->
+                    <article class="card shadow-lg p-4 rounded-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=200" alt="Inception Poster" class="rounded-3" style="width: 80px; height: 110px; object-fit: cover;">
+                            <div>
+                                <span class="badge bg-danger mb-1">Trending #1</span>
+                                <h1 class="h4 fw-bold mb-1">Inception</h1>
+                                <p class="text-secondary small mb-0">Sci-Fi / Action &bull; 2h 28m</p>
+                                <div class="text-warning small mt-1">
+                                    <i class="bi bi-star-fill"></i> 8.8/10 (240K Votes)
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="small mb-4 opacity-75">
+                            A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+                        </p>
+
+                        <button class="btn btn-danger w-100 py-2 fw-bold d-flex align-items-center justify-content-center gap-2 rounded-3">
+                            <i class="bi bi-ticket-perforated-fill"></i> Book Tickets
+                        </button>
+                    </article>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-3 border-top border-secondary border-opacity-25 small opacity-50">
+            &copy; 2026 BookMyShow Demo. Built with Bootstrap 5.3.
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT: THEME TOGGLE LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeContainer = document.getElementById('themeContainer');
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeIcon = document.getElementById('themeIcon');
+            const themeLabel = document.getElementById('themeLabel');
+
+            themeToggleBtn.addEventListener('click', () => {
+                // 1. Toggle background and text utility classes on main container
+                themeContainer.classList.toggle('bg-dark');
+                themeContainer.classList.toggle('text-light');
+                themeContainer.classList.toggle('bg-light');
+                themeContainer.classList.toggle('text-dark');
+
+                // 2. Check current active mode
+                const isDarkMode = themeContainer.classList.contains('bg-dark');
+
+                // 3. Update button icon, label, and variant based on active theme
+                if (isDarkMode) {
+                    themeIcon.className = 'bi bi-sun-fill';
+                    themeLabel.textContent = 'Light Mode';
+                    themeToggleBtn.className = 'btn btn-outline-warning d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2';
+                } else {
+                    themeIcon.className = 'bi bi-moon-stars-fill';
+                    themeLabel.textContent = 'Dark Mode';
+                    themeToggleBtn.className = 'btn btn-outline-dark d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2';
+                }
+            });
+        });
+    </script>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

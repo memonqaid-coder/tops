@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify-style Bootstrap Navbar</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Spotify Dark Navbar Styling */
+        .spotify-navbar {
+            background-color: #000000;
+            padding: 12px 0;
+            border-bottom: 1px solid #282828;
+        }
+
+        .spotify-brand {
+            color: #1db954; /* Spotify Green */
+            font-weight: 800;
+            font-size: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .spotify-brand:hover {
+            color: #1ed760;
+        }
+
+        /* Nav Link Styling */
+        .spotify-navbar .nav-link {
+            color: #b3b3b3;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            padding: 8px 16px !important;
+        }
+
+        .spotify-navbar .nav-link:hover,
+        .spotify-navbar .nav-link.active {
+            color: #ffffff;
+        }
+
+        /* Custom Search Input */
+        .search-wrapper {
+            position: relative;
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .search-wrapper .bi-search {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #b3b3b3;
+        }
+
+        .spotify-search-input {
+            background-color: #242424;
+            border: 1px solid transparent;
+            border-radius: 500px;
+            color: #ffffff;
+            padding-left: 38px;
+            font-size: 14px;
+        }
+
+        .spotify-search-input:focus {
+            background-color: #2a2a2a;
+            border-color: #ffffff;
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+        .spotify-search-input::placeholder {
+            color: #747474;
+        }
+
+        /* Profile Pill */
+        .profile-btn {
+            background-color: #0f0f0f;
+            border: 1px solid #282828;
+            color: #ffffff;
+            border-radius: 500px;
+            padding: 4px 12px 4px 4px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .profile-btn:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            transform: scale(1.02);
+        }
+
+        .profile-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Responsive Mobile Toggle Styling */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Spotify-style Navbar -->
+    <nav class="navbar navbar-expand-lg spotify-navbar sticky-top">
+        <div class="container-fluid px-md-4">
+            
+            <!-- Brand Logo -->
+            <a class="navbar-brand spotify-brand d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-spotify fs-3"></i>
+                <span>Spotify</span>
+            </a>
+
+            <!-- Mobile Hamburger Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#spotifyNavbarContent" aria-controls="spotifyNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Content -->
+            <div class="collapse navbar-collapse mt-3 mt-lg-0" id="spotifyNavbarContent">
+                
+                <!-- Center/Left Navigation Links -->
+                <ul class="navbar-nav me-auto mb-3 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active d-flex align-items-center gap-2" href="#">
+                            <i class="bi bi-house-door-fill fs-5"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" href="#">
+                            <i class="bi bi-collection-play-fill fs-5"></i>
+                            <span>Playlists</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" href="#">
+                            <i class="bi bi-person-fill fs-5"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Right Side Controls: Search Bar & User Profile Dropdown -->
+                <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3">
+                    
+                    <!-- Search Input -->
+                    <div class="search-wrapper">
+                        <i class="bi bi-search"></i>
+                        <input class="form-control spotify-search-input" type="search" placeholder="What do you want to play?" aria-label="Search">
+                    </div>
+
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn profile-btn d-flex align-items-center gap-2 dropdown-toggle" type="button" id="profileMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="User Avatar" class="profile-avatar">
+                            <span>Alex</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow-lg" aria-labelledby="profileMenu">
+                            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-person"></i> Account</a></li>
+                            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item d-flex align-items-center gap-2 text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div> <!-- End Collapsible Content -->
+
+        </div>
+    </nav>
+
+    <!-- Bootstrap 5.3 JS Bundle (Required for Hamburger Toggle & Dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

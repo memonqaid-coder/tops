@@ -1,0 +1,10 @@
+Step-by-Step Instructions to Capture the Screenshots
+Open Developer Tools: Open your index.html file in Google Chrome or Microsoft Edge, then press
+ F12 (or Ctrl + Shift + I / Cmd + Option + I on Mac).
+ Enable Device Mode: Click the Toggle Device Toolbar icon 
+ (looks like a phone/tablet icon in the top left of DevTools) or press Ctrl + Shift + M (Cmd + Shift + M on Mac).
+ Set the Dimensions & Capture:Desktop View (Width > 1200px, e.g., 1280px):Set the top width box to 1280.
+ Press Ctrl + Shift + P (Cmd + Shift + P on Mac), type Capture screenshot, and select Capture screenshot.
+ Tablet View (Width between 601px–900px, e.g., 768px):Set the top width box to 768.Repeat the capture command.
+ Mobile View (Width $\le$ 600px, e.g., 375px):Set the top width box to 375.Repeat the capture command.
+ Accompanying Submission Note

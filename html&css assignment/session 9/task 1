@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Grid - Bootstrap 5</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f1f2f6; /* Flipkart background color */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Card custom styling to mirror Flipkart aesthetics */
+        .flipkart-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+            background-color: #ffffff;
+        }
+
+        .flipkart-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+            transform: translateY(-3px);
+        }
+
+        .product-img-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .product-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .rating-badge {
+            background-color: #388e3c; /* Flipkart Green */
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .assured-badge {
+            height: 18px;
+        }
+
+        .discount-text {
+            color: #388e3c;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .btn-flipkart {
+            background-color: #fb641b; /* Flipkart Orange Buy Button */
+            color: #ffffff;
+            font-weight: 700;
+            border: none;
+        }
+
+        .btn-flipkart:hover {
+            background-color: #e55613;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container my-5">
+        <!-- Section Header -->
+        <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded-top border-bottom mb-4">
+            <h2 class="h5 mb-0 fw-bold text-dark">Deals of the Day</h2>
+            <a href="#" class="btn btn-primary btn-sm px-4 fw-semibold" style="background-color: #2874f0; border: none;">VIEW ALL</a>
+        </div>
+
+        <!-- Bootstrap Grid Row -->
+        <div class="row g-4">
+            
+            <!-- Product Card 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card h-100 flipkart-card shadow-sm">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400" alt="Sony Wireless Headphones">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between pt-0">
+                        <div>
+                            <p class="text-muted small mb-1">Sony</p>
+                            <h3 class="card-title h6 text-truncate mb-2" title="Sony WH-1000XM5 Noise Cancelling Headphones">
+                                Sony WH-1000XM5 Wireless Headphones
+                            </h3>
+                            
+                            <!-- Rating & Assured Tag -->
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span class="rating-badge d-inline-flex align-items-center gap-1">
+                                    4.6 <i class="bi bi-star-fill small"></i>
+                                </span>
+                                <span class="text-muted extra-small fs-7">(12,450)</span>
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Flipkart Assured" class="assured-badge ms-auto">
+                            </div>
+
+                            <!-- Pricing -->
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="fs-5 fw-bold text-dark">₹26,990</span>
+                                <span class="text-decoration-line-through text-muted small">₹34,990</span>
+                                <span class="discount-text">22% off</span>
+                            </div>
+
+                            <p class="text-success small fw-semibold mb-3">Free Delivery</p>
+                        </div>
+
+                        <button class="btn btn-flipkart w-100 py-2">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card h-100 flipkart-card shadow-sm">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400" alt="Smart Watch">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between pt-0">
+                        <div>
+                            <p class="text-muted small mb-1">Noise</p>
+                            <h3 class="card-title h6 text-truncate mb-2" title="Noise ColorFit Pro 4 Smartwatch">
+                                Noise ColorFit Pro 4 Bluetooth Smartwatch
+                            </h3>
+                            
+                            <!-- Rating & Assured Tag -->
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span class="rating-badge d-inline-flex align-items-center gap-1">
+                                    4.3 <i class="bi bi-star-fill small"></i>
+                                </span>
+                                <span class="text-muted extra-small fs-7">(8,920)</span>
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Flipkart Assured" class="assured-badge ms-auto">
+                            </div>
+
+                            <!-- Pricing -->
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="fs-5 fw-bold text-dark">₹2,999</span>
+                                <span class="text-decoration-line-through text-muted small">₹5,999</span>
+                                <span class="discount-text">50% off</span>
+                            </div>
+
+                            <p class="text-success small fw-semibold mb-3">Lowest price in 30 days</p>
+                        </div>
+
+                        <button class="btn btn-flipkart w-100 py-2">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card h-100 flipkart-card shadow-sm">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=400" alt="JBL Bluetooth Speaker">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between pt-0">
+                        <div>
+                            <p class="text-muted small mb-1">JBL</p>
+                            <h3 class="card-title h6 text-truncate mb-2" title="JBL Flip 6 Portable Bluetooth Speaker">
+                                JBL Flip 6 Waterproof Portable Speaker
+                            </h3>
+                            
+                            <!-- Rating & Assured Tag -->
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span class="rating-badge d-inline-flex align-items-center gap-1">
+                                    4.5 <i class="bi bi-star-fill small"></i>
+                                </span>
+                                <span class="text-muted extra-small fs-7">(5,610)</span>
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Flipkart Assured" class="assured-badge ms-auto">
+                            </div>
+
+                            <!-- Pricing -->
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <span class="fs-5 fw-bold text-dark">₹9,999</span>
+                                <span class="text-decoration-line-through text-muted small">₹13,999</span>
+                                <span class="discount-text">28% off</span>
+                            </div>
+
+                            <p class="text-success small fw-semibold mb-3">Free Delivery</p>
+                        </div>
+
+                        <button class="btn btn-flipkart w-100 py-2">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

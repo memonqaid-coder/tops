@@ -1,0 +1,17 @@
+>>Here is how you can use Chrome DevTools to change the background color 
+  of your name (<h1>) live on the page:
+
+ > Open myprofile.html in Google Chrome.
+
+>>Right-click directly on your name (Alex Mercer) 
+  and select Inspect (or press F12 / Ctrl + Shift + I on Windows, Cmd + Option + I on Mac).
+
+>>In the Elements panel on the right side (or bottom), look at the Styles tab.
+
+>>Click inside the element.style { } block at the top of the Styles pane.
+
+>>Type background-color: yellow; (or substitute yellow with any hex code or 
+  color name you prefer, like skyblue, #ff5722, or purple).
+
+>>The background color behind your name will update instantly on the page without 
+  modifying your saved myprofile.html file on disk.

@@ -1,0 +1,16 @@
+DOCUMENT (Root Node)
+└── html (Parent)
+    ├── head (Child)
+    │   ├── meta [charset="UTF-8"]
+    │   ├── meta [name="viewport"]
+    │   └── title
+    │       └── "My Profile" (Text Node)
+    │
+    └── body (Child)
+        ├── h1 (Grandchild / Content Level 3)
+        │   └── "Alex Mercer" (Text Node)
+        │
+        ├── img [src="...", alt="..."] (Grandchild / Content Level 3)
+        │
+        └── p (Grandchild / Content Level 3)
+            └── "Hi! I am a database developer..." (Text Node)

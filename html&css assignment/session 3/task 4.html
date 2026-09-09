@@ -1,0 +1,38 @@
+<form action="#" method="POST" style="max-width: 400px; font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+    <h2 style="color: #cb202d; margin-top: 0;">Zomato Order Details</h2>
+
+    <!-- User Name Field -->
+    <div style="margin-bottom: 15px;">
+        <label for="userName" style="font-weight: bold;">Full Name:</label><br>
+        <input type="text" id="userName" name="userName" placeholder="Enter your name" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required>
+    </div>
+
+    <!-- Food Item Select Dropdown -->
+    <div style="margin-bottom: 15px;">
+        <label for="foodItem" style="font-weight: bold;">Select Food Item:</label><br>
+        <select id="foodItem" name="foodItem" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required>
+            <option value="" disabled selected hidden>Choose your meal</option>
+            <option value="butter_chicken">Butter Chicken with Garlic Naan - ₹350</option>
+            <option value="paneer_tikka">Paneer Tikka Sizzler - ₹280</option>
+            <option value="dum_biryani">Hyderabadi Dum Biryani - ₹320</option>
+            <option value="dal_makhani">Dal Makhani with Jeera Rice - ₹240</option>
+        </select>
+    </div>
+
+    <!-- Quantity Number Input -->
+    <div style="margin-bottom: 15px;">
+        <label for="quantity" style="font-weight: bold;">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required>
+    </div>
+
+    <!-- Delivery Instructions Textarea -->
+    <div style="margin-bottom: 15px;">
+        <label for="deliveryInstructions" style="font-weight: bold;">Delivery Instructions:</label><br>
+        <textarea id="deliveryInstructions" name="deliveryInstructions" rows="4" placeholder="e.g. Leave at door, don't ring doorbell, avoid spicy..." style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" required></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" style="width: 100%; background-color: #cb202d; color: white; padding: 10px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
+        Place Order
+    </button>
+</form>

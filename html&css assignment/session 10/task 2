@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Style Product Card</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f1f2f6;
+            font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        /* Flipkart Product Card */
+        .flipkart-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #ffffff;
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+            overflow: hidden;
+        }
+
+        .flipkart-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Image Wrapper & Wishlist Button */
+        .card-img-container {
+            position: relative;
+            background-color: #ffffff;
+            padding: 20px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            color: #c2c2c2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .wishlist-btn:hover {
+            color: #ff4343;
+        }
+
+        /* Flipkart Rating Badge */
+        .fk-rating-badge {
+            background-color: #388e3c; /* Flipkart Green */
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Pricing Details */
+        .current-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #212121;
+        }
+
+        .original-price {
+            font-size: 14px;
+            color: #878787;
+            text-decoration: line-through;
+        }
+
+        .discount-percent {
+            font-size: 14px;
+            font-weight: 700;
+            color: #388e3c;
+        }
+
+        /* Flipkart Orange 'Buy Now' Button */
+        .btn-buy-now {
+            background-color: #fb641b; /* Flipkart Buy Orange */
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-buy-now:hover {
+            background-color: #e55511;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            
+            <!-- Card Column -->
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <div class="card flipkart-card h-100">
+                    
+                    <!-- Product Image & Wishlist Icon -->
+                    <div class="card-img-container">
+                        <button class="wishlist-btn" aria-label="Add to Wishlist">
+                            <i class="bi bi-heart-fill fs-6"></i>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600" alt="Wireless Headphones">
+                    </div>
+
+                    <!-- Card Body / Details -->
+                    <div class="card-body d-flex flex-column justify-content-between p-3 border-top">
+                        <div>
+                            <!-- Brand / Title -->
+                            <span class="text-muted small fw-bold text-uppercase">Sony</span>
+                            <h5 class="card-title text-truncate fw-normal fs-6 text-dark mb-2" title="WH-1000XM4 Wireless Noise Cancelling Headphones">
+                                WH-1000XM4 Wireless Noise Cancelling Headphones
+                            </h5>
+
+                            <!-- Rating & Reviews -->
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="fk-rating-badge d-inline-flex align-items-center gap-1">
+                                    4.5 <i class="bi bi-star-fill fs-7" style="font-size: 10px;"></i>
+                                </span>
+                                <span class="text-muted small fw-semibold">(42,850)</span>
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Flipkart Assured" height="18" class="ms-auto">
+                            </div>
+
+                            <!-- Pricing Info -->
+                            <div class="d-flex align-items-baseline gap-2 mb-3">
+                                <span class="current-price">₹19,990</span>
+                                <span class="original-price">₹29,990</span>
+                                <span class="discount-percent">33% off</span>
+                            </div>
+                            
+                            <p class="text-success small fw-semibold mb-3">Free delivery by Tomorrow</p>
+                        </div>
+
+                        <!-- Buy Now Action Button -->
+                        <button class="btn btn-buy-now w-100 d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-lightning-fill"></i>
+                            <span>Buy Now</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

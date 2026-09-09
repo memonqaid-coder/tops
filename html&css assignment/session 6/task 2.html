@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Tile - Display Property Demo</title>
+    <style>
+        /* Base Setup */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f6;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Product Tile Container */
+        .product-tile {
+            width: 280px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+        }
+
+        /* 1. DISPLAY: BLOCK
+           Images and titles act as full-width block elements,
+           forcing each onto its own new line. */
+        .product-image {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .product-name {
+            display: block; /* Takes full width of container */
+            font-size: 16px;
+            font-weight: 600;
+            color: #212121;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 2. DISPLAY: INLINE-BLOCK
+           Allows pricing elements to sit side-by-side on the same line
+           while still respecting width, height, and padding rules. */
+        .price-container {
+            margin-top: 8px;
+        }
+
+        .current-price {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #212121;
+            margin-right: 6px;
+        }
+
+        .original-price {
+            display: inline-block;
+            font-size: 14px;
+            color: #878787;
+            text-decoration: line-through;
+            margin-right: 6px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: bold;
+            color: #388e3c;
+        }
+
+        /* 3. DISPLAY: NONE
+           Hides the entire price container and removes it from the document flow.
+           Add class "hide-price" to .price-container to activate. */
+        .price-container.hide-price {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flipkart Product Tile -->
+    <article class="product-tile">
+        
+        <!-- Image (display: block) -->
+        <img class="product-image" 
+             src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400" 
+             alt="Wireless Headphones">
+
+        <!-- Product Title (display: block) -->
+        <h3 class="product-name" title="Sony WH-1000XM5 Wireless Headphones">
+            Sony WH-1000XM5 Wireless Headphones
+        </h3>
+
+        <!-- Price Section (display: inline-block elements) 
+             HINT: Add the "hide-price" class below to test hiding the pricing completely:
+             e.g., <div class="price-container hide-price"> 
+        -->
+        <div class="price-container">
+            <span class="current-price">₹26,990</span>
+            <span class="original-price">₹34,990</span>
+            <span class="discount-badge">22% off</span>
+        </div>
+
+    </article>
+
+</body>
+</html>
