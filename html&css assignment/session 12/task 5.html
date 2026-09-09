@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria Vance | Official Music Artist Website</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding-top: 76px;
+        }
+
+        /* STICKY NAVBAR STYLING */
+        .navbar-custom {
+            background-color: rgba(11, 12, 16, 0.92) !important;
+            backdrop-filter: blur(12px);
+        }
+
+        .text-neon {
+            color: #66fcf1 !important;
+        }
+
+        /* Profile & Image Frames */
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #66fcf1;
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.25);
+        }
+
+        /* CARD CUSTOMIZATION */
+        .card-custom {
+            background-color: #1f2833;
+            border: 1px solid #2c3540;
+            border-radius: 12px;
+        }
+
+        /* INSTAGRAM-STYLE SOCIAL BUTTONSHere is a clean, modern HTML footer template built with **Bootstrap 5** and **Bootstrap Icons**. It features Instagram-style social media links, functional layout columns, and uses Bootstrap’s dark theme utility classes (`bg-dark`, `text-white`, `link-light`) to maintain visual cohesion across your application.
+
+### Implementation
+
+Include the Bootstrap CSS and Icons CDN in your `<head>` tag, then add the footer markup to your page:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohesive Footer Example</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css)" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="[https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css)" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Main Content Buffer -->
+  <div class="flex-grow-1 p-5 text-center">
+    <h1>Page Content</h1>
+    <p class="text-muted">Scroll down or view the bottom to see the cohesive dark-themed footer.</p>
+  </div>
+
+  <!-- Footer Starts Here -->
+  <footer class="bg-dark text-white border-top border-secondary pt-5 pb-4 mt-auto">
+    <div class="container">
+      <div class="row gy-4">
+        
+        <!-- Brand & Description -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="fw-bold text-uppercase tracking-wider mb-3">
+            <i class="bi bi-layers-half text-primary me-2"></i>BrandName
+          </h5>
+          <p class="text-secondary small mb-4">
+            Building clean, cohesive web experiences. Designed with care and styled using Bootstrap utilities.
+          </p>
+          
+          <!-- Social Icons (Instagram Style) -->
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" aria-label="Instagram">
+              <i class="bi bi-instagram fs-5"></i>
+            </a>
+            <a href="#" class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" aria-label="Facebook">
+              <i class="bi bi-facebook fs-5"></i>
+            </a>
+            <a href="#" class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" aria-label="Twitter / X">
+              <i class="bi bi-twitter-x fs-5"></i>
+            </a>
+            <a href="#" class="btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" aria-label="LinkedIn">
+              <i class="bi bi-linkedin fs-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="fw-semibold text-white mb-3">Navigation</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Services</a></li>
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="fw-semibold text-white mb-3">Resources</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Documentation</a></li>
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Blog</a></li>
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Help Center</a></li>
+            <li class="mb-2"><a href="#" class="link-secondary text-decoration-none">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="fw-semibold text-white mb-3">Stay Updated</h6>
+          <p class="text-secondary small mb-3">Subscribe to our newsletter for the latest updates.</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control bg-dark text-white border-secondary placeholder-glow" placeholder="Enter your email" aria-label="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="my-4 border-secondary">
+
+      <!-- Bottom Bar -->
+      <div class="row align-items-center small text-secondary">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          &copy; 2026 BrandName Inc. All rights reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" class="link-secondary text-decoration-none me-3">Terms of Service</a>
+          <a href="#" class="link-secondary text-decoration-none me-3">Privacy</a>
+          <a href="#" class="link-secondary text-decoration-none">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

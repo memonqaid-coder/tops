@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Platform Links</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+        }
+
+        .card-custom {
+            background-color: #1f2833;
+            border: 1px solid #2c3540;
+            border-radius: 12px;
+        }
+
+        .form-control-dark {
+            background-color: #0b0c10;
+            border: 1px solid #2c3540;
+            color: #ffffff;
+        }
+
+        .form-control-dark:focus {
+            background-color: #0b0c10;
+            border-color: #66fcf1;
+            color: #ffffff;
+            box-shadow: 0 0 0 0.25rem rgba(102, 252, 241, 0.25);
+        }
+
+        /* Platform Accent Cards */
+        .preview-card {
+            background-color: #1a1e24;
+            border-radius: 10px;
+            padding: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-left: 5px solid transparent;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .preview-card.spotify {
+            border-left-color: #1ed760;
+        }
+
+        .preview-card.youtube {
+            border-left-color: #ff0000;
+        }
+
+        .preview-card.apple {
+            border-left-color: #fc3c44;
+        }
+
+        .brand-icon {
+            font-size: 1.75rem;
+        }
+
+        .spotify-color { color: #1ed760; }
+        .youtube-color { color: #ff0000; }
+        .apple-color { color: #fc3c44; }
+    </style>
+</head>
+<body class="py-5">
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <!-- FORM CONTAINER -->
+                <div class="card-custom p-4 p-md-5 shadow-lg mb-5">
+                    <h1 class="h4 fw-bold text-white mb-2 text-center">
+                        <i class="bi bi-music-note-list text-info me-2"></i>Music Platform Profiles
+                    </h1>
+                    <p class="text-secondary small text-center mb-4">Enter your profile URLs to generate preview links below.</p>
+
+                    <form id="musicLinksForm" name="musicLinksForm" novalidate>
+                        
+                        <!-- Spotify Input -->
+                        <div class="mb-3">
+                            <label for="spotifyUrl" class="form-label small fw-semibold text-light">
+                                <i class="bi bi-spotify spotify-color me-1"></i> Spotify Profile URL
+                            </label>
+                            <input type="url" class="form-control form-control-dark" id="spotifyUrl" name="spotifyUrl" placeholder="https://open.spotify.com/artist/..." required>
+                        </div>
+
+                        <!-- YouTube Music Input -->
+                        <div class="mb-3">
+                            <label for="youtubeUrl" class="form-label small fw-semibold text-light">
+                                <i class="bi bi-youtube youtube-color me-1"></i> YouTube Music Profile URL
+                            </label>
+                            <input type="url" class="form-control form-control-dark" id="youtubeUrl" name="youtubeUrl" placeholder="https://music.youtube.com/channel/..." required>
+                        </div>
+
+                        <!-- Apple Music Input -->
+                        <div class="mb-4">
+                            <label for="appleUrl" class="form-label small fw-semibold text-light">
+                                <i class="bi bi-apple apple-color me-1"></i> Apple Music Profile URL
+                            </label>
+                            <input type="url" class="form-control form-control-dark" id="appleUrl" name="appleUrl" placeholder="https://music.apple.com/artist/..." required>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-info w-100 py-2 fw-bold d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-file-earmark-code-fill"></i>
+                            <span>Generate Preview Cards</span>
+                        </button>
+
+                    </form>
+                </div>
+
+                <!-- PREVIEW CARDS CONTAINER -->
+                <section id="previewSection" class="d-none">
+                    <h2 class="h5 fw-bold text-white mb-3 d-flex align-items-center justify-content-between">
+                        <span>Submitted Profiles</span>
+                        <span class="badge bg-secondary fs-7">3 Platforms</span>
+                    </h2>
+
+                    <div class="d-flex flex-column gap-3" id="cardsWrapper">
+                        <!-- Dynamic cards render here -->
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.forms['musicLinksForm'];
+            const previewSection = document.getElementById('previewSection');
+            const cardsWrapper = document.getElementById('cardsWrapper');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Extract values
+                const spotifyUrl = form['spotifyUrl'].value.trim();
+                const youtubeUrl = form['youtubeUrl'].value.trim();
+                const appleUrl = form['appleUrl'].value.trim();
+
+                // Build Card Data
+                const platforms = [
+                    {
+                        name: 'Spotify',
+                        url: spotifyUrl,
+                        iconClass: 'bi-spotify spotify-color',
+                        cardClass: 'spotify',
+                        btnClass: 'btn-outline-success'
+                    },
+                    {
+                        name: 'YouTube Music',
+                        url: youtubeUrl,
+                        iconClass: 'bi-youtube youtube-color',
+                        cardClass: 'youtube',
+                        btnClass: 'btn-outline-danger'
+                    },
+                    {
+                        name: 'Apple Music',
+                        url: appleUrl,
+                        iconClass: 'bi-apple apple-color',
+                        cardClass: 'apple',
+                        btnClass: 'btn-outline-light'
+                    }
+                ];
+
+                // Clear previous cards
+                cardsWrapper.innerHTML = '';
+
+                // Generate new preview cards
+                platforms.forEach(platform => {
+                    const card = document.createElement('article');
+                    card.className = `preview-card ${platform.cardClass} d-flex align-items-center justify-content-between gap-3 shadow-sm`;
+
+                    card.innerHTML = `
+                        <div class="d-flex align-items-center gap-3 text-truncate">
+                            <i class="bi ${platform.iconClass} brand-icon"></i>
+                            <div class="text-truncate">
+                                <h3 class="h6 fw-bold text-white mb-0">${platform.name}</h3>
+                                <small class="text-secondary text-truncate d-block" style="max-width: 260px;">${platform.url}</small>
+                            </div>
+                        </div>
+                        <a href="${platform.url}" target="_blank" rel="noopener noreferrer" class="btn ${platform.btnClass} btn-sm fw-semibold rounded-pill px-3 flex-shrink-0 d-inline-flex align-items-center gap-1">
+                            <span>Open</span>
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    `;
+
+                    cardsWrapper.appendChild(card);
+                });
+
+                // Show preview section
+                previewSection.classList.remove('d-none');
+            });
+        });
+    </script>
+</body>
+</html>

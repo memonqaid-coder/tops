@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Link Generator</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            
+            /* Platform Theme Colors */
+            --instagram-color: #e4405f;
+            --linkedin-color: #0a66c2;
+            --twitter-color: #1da1f2;
+            --github-color: #f0f6fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* --- FORM STYLING --- */
+        .form-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        /* Icon Input Wrapper */
+        .input-icon-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon-wrapper i {
+            position: absolute;
+            left: 14px;
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .input-icon-wrapper .fa-instagram { color: var(--instagram-color); }
+        .input-icon-wrapper .fa-linkedin { color: var(--linkedin-color); }
+        .input-icon-wrapper .fa-x-twitter { color: var(--twitter-color); }
+        .input-icon-wrapper .fa-github { color: var(--github-color); }
+
+        .input-icon-wrapper input {
+            width: 100%;
+            padding: 12px 14px 12px 42px;
+            background-color: #0d1117;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .input-icon-wrapper input:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            background-color: #238636;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #2ea043;
+        }
+
+        /* --- PREVIEW CARDS STYLING --- */
+        .preview-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .preview-section h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        /* Base Card Structure */
+        .preview-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            border: 1px solid var(--border-color);
+            border-left-width: 5px; /* Unique brand accent bar */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            overflow: hidden;
+        }
+
+        .card-icon {
+            font-size: 1.6rem;
+            width: 32px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card-info .platform-name {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .card-info .username {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .btn-visit {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-visit:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* VISUALLY DISTINCT BRAND VARIATIONS */
+        
+        /* Instagram Theme */
+        .preview-card.instagram {
+            border-left-color: var(--instagram-color);
+            background: linear-gradient(135deg, rgba(228, 64, 95, 0.08), rgba(22, 27, 34, 0.95));
+        }
+        .preview-card.instagram .card-icon { color: var(--instagram-color); }
+        .preview-card.instagram .btn-visit { 
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+        }
+
+        /* LinkedIn Theme */
+        .preview-card.linkedin {
+            border-left-color: var(--linkedin-color);
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.08), rgba(22, 27, 34, 0.95));
+        }
+        .preview-card.linkedin .card-icon { color: var(--linkedin-color); }
+        .preview-card.linkedin .btn-visit { background-color: var(--linkedin-color); }
+
+        /* X (Twitter) Theme */
+        .preview-card.twitter {
+            border-left-color: var(--twitter-color);
+            background: linear-gradient(135deg, rgba(29, 161, 242, 0.08), rgba(22, 27, 34, 0.95));
+        }
+        .preview-card.twitter .card-icon { color: var(--twitter-color); }
+        .preview-card.twitter .btn-visit { background-color: var(--twitter-color); }
+
+        /* GitHub Theme */
+        .preview-card.github {
+            border-left-color: #8b949e;
+            background: linear-gradient(135deg, rgba(240, 246, 252, 0.05), rgba(22, 27, 34, 0.95));
+        }
+        .preview-card.github .card-icon { color: var(--github-color); }
+        .preview-card.github .btn-visit { 
+            background-color: #21262d; 
+            border: 1px solid var(--border-color); 
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        
+        <!-- INPUT FORM CARD -->
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Social Links Setup</h2>
+                <p>Enter your profile URLs to generate live preview cards</p>
+            </div>
+
+            <form id="socialLinksForm">
+                <div class="form-group">
+                    <label for="instagram">Instagram Profile</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-brands fa-instagram"></i>
+                        <input type="url" id="instagram" placeholder="https://instagram.com/username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="twitter">X (Twitter) Profile</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <input type="url" id="twitter" placeholder="https://x.com/username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="github">GitHub Profile</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-brands fa-github"></i>
+                        <input type="url" id="github" placeholder="https://github.com/username">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Generate Cards</button>
+            </form>
+        </div>
+
+        <!-- PREVIEW CARDS SECTION -->
+        <section id="previewSection" class="preview-section hidden">
+            <h3>Generated Profiles</h3>
+            <div id="cardsContainer" class="preview-section">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('socialLinksForm');
+            const previewSection = document.getElementById('previewSection');
+            const cardsContainer = document.getElementById('cardsContainer');
+
+            // Config array detailing platform metadata
+            const platforms = [
+                { id: 'instagram', name: 'Instagram', icon: 'fa-brands fa-instagram' },
+                { id: 'linkedin', name: 'LinkedIn', icon: 'fa-brands fa-linkedin' },
+                { id: 'twitter', name: 'X / Twitter', icon: 'fa-brands fa-x-twitter' },
+                { id: 'github', name: 'GitHub', icon: 'fa-brands fa-github' }
+            ];
+
+            // Utility to extract username/handle from various URL structures
+            function extractUsername(rawUrl) {
+                if (!rawUrl) return null;
+                try {
+                    // Ensure the URL has a protocol for accurate parsing
+                    let formattedUrl = rawUrl.trim();
+                    if (!/^https?:\/\//i.test(formattedUrl)) {
+                        formattedUrl = 'https://' + formattedUrl;
+                    }
+
+                    const parsed = new URL(formattedUrl);
+                    // Split path segments and remove empty parts
+                    const pathSegments = parsed.pathname.split('/').filter(segment => segment.length > 0);
+
+                    if (pathSegments.length === 0) return parsed.hostname;
+
+                    // Handles LinkedIn format like /in/username
+                    if (pathSegments[0] === 'in' && pathSegments[1]) {
+                        return '@' + pathSegments[1];
+                    }
+
+                    // Handles general paths like /username
+                    let handle = pathSegments[0];
+                    return handle.startsWith('@') ? handle : '@' + handle;
+                } catch (e) {
+                    // Fallback for custom or plain text inputs
+                    const cleaned = rawUrl.replace(/^(https?:\/\/)?(www\.)?[^\/]+\/?/, '').replace(/\/$/, '');
+                    return cleaned ? '@' + cleaned : rawUrl;
+                }
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                cardsContainer.innerHTML = '';
+                let createdCardCount = 0;
+
+                platforms.forEach(platform => {
+                    const inputElement = document.getElementById(platform.id);
+                    const rawUrl = inputElement.value.trim();
+
+                    if (rawUrl) {
+                        const handle = extractUsername(rawUrl);
+                        
+                        // Ensure full web protocol exists for link clicking
+                        const destinationUrl = rawUrl.startsWith('http') ? rawUrl : `https://${rawUrl}`;
+
+                        // Create Preview Card Node
+                        const card = document.createElement('article');
+                        card.className = `preview-card ${platform.id}`;
+
+                        card.innerHTML = `
+                            <div class="card-left">
+                                <i class="${platform.icon} card-icon"></i>
+                                <div class="card-info">
+                                    <span class="platform-name">${platform.name}</span>
+                                    <span class="username" title="${handle}">${handle}</span>
+                                </div>
+                            </div>
+                            <a href="${destinationUrl}" target="_blank" rel="noopener noreferrer" class="btn-visit">
+                                <span>Visit</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                            </a>
+                        `;
+
+                        cardsContainer.appendChild(card);
+                        createdCardCount++;
+                    }
+                });
+
+                // Display section if at least one card was generated
+                if (createdCardCount > 0) {
+                    previewSection.classList.remove('hidden');
+                } else {
+                    previewSection.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

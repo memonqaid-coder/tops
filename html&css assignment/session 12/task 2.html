@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Featured Playlists Grid</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Spotify Playlist Card Container */
+        .playlist-card {
+            background-color: #181818;
+            border-radius: 8px;
+            padding: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        .playlist-card:hover {
+            background-color: #282828;
+            transform: translateY(-4px);
+        }
+
+        /* Playlist Cover Image Container */
+        .cover-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio Box */
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .cover-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Floating Play Hover Icon */
+        .play-hover-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 48px;
+            height: 48px;
+            background-color: #1db954; /* Spotify Green */
+            color: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .playlist-card:hover .play-hover-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Spotify Green Button */
+        .btn-spotify {
+            background-color: #1db954;
+            color: #000000;
+            font-weight: 700;
+            font-size: 14px;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-spotify:hover {
+            background-color: #1ed760;
+            color: #000000;
+            transform: scale(1.02);
+        }
+
+        .btn-spotify:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container py-5">
+        
+        <!-- Section Title Header -->
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <div>
+                <h1 class="h3 fw-bold mb-1 text-white">Featured Playlists</h1>
+                <p class="text-secondary small mb-0">Hand-curated mixes tailored for every mood and genre.</p>
+            </div>
+            <a href="#" class="text-secondary text-decoration-none fw-semibold small text-uppercase tracking-wider hover-white">Show all</a>
+        </div>
+
+        <!-- BOOTSTRAP GRID ROW: Stacks on mobile (col-12), 3 side-by-side on desktop (col-md-4) -->
+        <div class="row g-4">
+
+            <!-- PLAYLIST 1: LO-FI BEATS -->
+            <div class="col-12 col-md-4">
+                <article class="playlist-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="cover-wrapper">
+                            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=500" alt="Lo-Fi Beats Cover">
+                            <div class="play-hover-btn">
+                                <i class="bi bi-play-fill fs-3 ms-1"></i>
+                            </div>
+                        </div>
+                        <h2 class="h6 fw-bold text-white mb-1 text-truncate">Lo-Fi Chill Beats</h2>
+                        <p class="text-secondary small line-clamp-2 mb-3">Chill beats, lofi hip hop, and relaxing instrumentals to focus and study.</p>
+                    </div>
+
+                    <button class="btn btn-spotify w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-play-circle-fill fs-5"></i>
+                        <span>Listen Now</span>
+                    </button>
+                </article>
+            </div>
+
+            <!-- PLAYLIST 2: SYNTHWAVE & RETRO -->
+            <div class="col-12 col-md-4">
+                <article class="playlist-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="cover-wrapper">
+                            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=500" alt="Synthwave Drive Cover">
+                            <div class="play-hover-btn">
+                                <i class="bi bi-play-fill fs-3 ms-1"></i>
+                            </div>
+                        </div>
+                        <h2 class="h6 fw-bold text-white mb-1 text-truncate">Synthwave Cyber Drive</h2>
+                        <p class="text-secondary small line-clamp-2 mb-3">Neon synth, retrowave, and electronic beats for late night urban drives.</p>
+                    </div>
+
+                    <button class="btn btn-spotify w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-play-circle-fill fs-5"></i>
+                        <span>Listen Now</span>
+                    </button>
+                </article>
+            </div>
+
+            <!-- PLAYLIST 3: ACOUSTIC MORNINGS -->
+            <div class="col-12 col-md-4">
+                <article class="playlist-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="cover-wrapper">
+                            <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=500" alt="Acoustic Morning Cover">
+                            <div class="play-hover-btn">
+                                <i class="bi bi-play-fill fs-3 ms-1"></i>
+                            </div>
+                        </div>
+                        <h2 class="h6 fw-bold text-white mb-1 text-truncate">Acoustic Mornings</h2>
+                        <p class="text-secondary small line-clamp-2 mb-3">Soft acoustic guitar, gentle indie folk, and calm melodies to start your day.</p>
+                    </div>
+
+                    <button class="btn btn-spotify w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-play-circle-fill fs-5"></i>
+                        <span>Listen Now</span>
+                    </button>
+                </article>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
