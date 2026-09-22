@@ -1,0 +1,91 @@
+if (!window.localStorage.getItem("username")) {
+    if (!window.localStorage.getItem("password")) {
+
+        $(".DeleteAccount").hide();
+
+
+    }
+}
+
+
+
+function DeleteAccount() {
+    var r = confirm("Are you sure you want to delete your account?");
+    if (r == true) {
+
+        //        console.log(window.localStorage.getItem("username"));
+        //        console.log(window.localStorage.getItem("password"));
+        //        console.log(window.localStorage.getItem("mobile"));
+
+
+        if (window.localStorage.getItem("username") && window.localStorage.getItem("password") && window.localStorage.getItem("mobile")) {
+
+            //alert(localStorage.miniadminAPI + "/DeleteClientMaster/" + localStorage.username + "/" + localStorage.password + "/" + localStorage.mobile);
+
+            $.ajax({
+                type: "GET",
+                url: localStorage.miniadminAPI + "/DeleteClientMaster/" + localStorage.username + "/" + localStorage.password + "/" + localStorage.mobile,
+                dataType: "text",
+                crossDomain: true,
+                processData: false,
+                success: OnSuccess_DeleteAccount,
+                error: OnError_DeleteAccount,
+                cache: false
+            });
+        }
+
+
+    } else {
+        //do nothing
+    }
+}
+
+function OnSuccess_DeleteAccount(data, status) {
+    //alert(data);
+    try {
+
+        var JSONString = data;
+
+        //alert1(JSON.parse(JSONString));
+        var JSONObject = JSON.parse(JSONString);
+        //console.log(JSONObject);      // Dump all data of the Object in the console
+
+        JSONObject = JSONObject.split("|");
+
+        //alert(JSONObject[0]);
+
+
+        if (JSONObject[0] == 1) {
+
+            alert("Your Account Deleted Successfully");
+            localStorage.clear();
+            window.location.href = "index.html";
+
+        }
+        else {
+            alert(JSONObject[1]);
+        }
+
+
+
+
+    }
+    catch (e) {
+        //alert("OnSuccess" + e);
+    }
+
+
+}
+
+
+
+
+function OnError_DeleteAccount(request, status, error) {
+    //stopSpinner();
+    alert(e);
+    //alert("Webservice Error: " + request.statusText);
+}
+
+
+
+

@@ -1,0 +1,18 @@
+$(document).ready(function () {
+
+    //For Logo #########################################################################
+    //For Logo *************************************************************************
+
+    $('.MainLogo').attr('src', "https://ticker.chirayusoft.com/bullion/" + localStorage.appnameWithMiniadminId + "/app/img/logo/logo.png?v=" + new Date().getTime()).css({
+        'width': '90%',
+        'padding': '10px 0'
+    });
+
+    $('.MainLogo_Menu').attr('src', "https://ticker.chirayusoft.com/bullion/" + localStorage.appnameWithMiniadminId + "/app/img/logo/logo.png?v=" + new Date().getTime()).css({
+        'width': '90%',
+        'padding': '10px 10px'
+    });
+
+
+    
+});

@@ -1,0 +1,64 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  
+  position: fixed;
+  /*bottom: -9px;*/
+  bottom: -8px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  /*height: 60px;
+  line-height: 60px;*/ /* Vertically center the text there */
+  /*height: 74px;*/
+  height: auto;
+  /* line-height: 2px; */
+  /* background-color: #000; */
+  /* background-image: linear-gradient(to left, #F8F8F8, #E8E8E8); */
+  /* border-top: 1px solid #8c8c8c; */
+  z-index: 1;
+  font-size: 14px;
+  background-image: url(../img/appimages/background1.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;  
+
+}
+
+
+.footer-menu{
+  /* background:url(../img/jbbg.png)top no-repeat;background-size: cover;background-attachment: fixed; */
+  background-color:#1a191f;
+}
+
+.footer.col-xs-3{
+  background:#000;
+}
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  /*padding: 60px 15px 0;*/
+  padding: 10px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+footer .fa
+{
+    color: #FFF !important;
+}
